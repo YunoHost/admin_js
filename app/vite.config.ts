@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'url'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, UserConfig } from 'vite'
 import fs from 'fs'
 import createVuePlugin from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -13,12 +13,12 @@ const supportedDatefnsLocales = Object.entries(supportedLocales).map(
   },
 )
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(async ({ mode }) => {
   // Load env file based on `mode` in the current working directory.
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, process.cwd())
 
-  const config = {
+  let config: UserConfig = {
     define: {
       // fake process.env for some deps
       'process.env': {},
@@ -102,7 +102,7 @@ export default defineConfig(({ mode }) => {
     }
   }
   // mode dev
-  return {
+  config = {
     ...config,
     server: {
       ...(env.VITE_LOCAL === 'true'
@@ -131,5 +131,10 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+  }
+  try {
+    return (await import("./vite.config.local")).overrideConfig(config)
+  } catch {
+    return config
   }
 })

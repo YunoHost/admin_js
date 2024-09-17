@@ -441,7 +441,9 @@
         "logs": "no logs | log | logs",
         "permissions": "no permissions | permission | permissions",
         "services": "no services | service | services",
-        "users": "no users | user | users"
+        "users": "no users | user | users",
+        "disk": "no disk | disk | disks",
+        "inserted_disk": "no inserted disk | inserted disk | inserted disks"
     },
     "items_verbose_count": "There are {items}. | There is 1 {items}. | There are {items}.",
     "items_verbose_items_left": "There are {items} left. | There is 1 {items} left. | There are {items} left.",
@@ -561,6 +563,20 @@
     "start": "Start",
     "status": "Status",
     "stop": "Stop",
+    "storage": "Storage",
+    "storage_disks": {
+      "category_name": "Hard drives",
+      "infos": {
+        "serial": "Serial:",
+        "serial_unknown": "Unknown",
+        "size": "Size:",
+        "type": "Type:"
+      },
+      "infos_meta": {
+        "usb": "USB device",
+        "ejectable": "This device can be ejected"
+      }
+    },
     "system": "System",
     "system_apps_nothing": "All apps are up to date!",
     "system_packages_nothing": "All system packages are up to date!",
