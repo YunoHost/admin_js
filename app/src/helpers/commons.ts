@@ -45,7 +45,7 @@ export function objectGet<
  * @param value - Anything.
  */
 export function isEmptyValue(
-  value: any,
+  value: any
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 ): value is null | undefined | '' | [] | {} {
   if (typeof value === 'number' || typeof value === 'boolean') return false
@@ -68,11 +68,11 @@ export function filterObject<T extends Obj>(
   filter: (
     entries: [string, any],
     index: number,
-    array: [string, any][],
-  ) => boolean,
+    array: [string, any][]
+  ) => boolean
 ) {
   return Object.fromEntries(
-    Object.entries(obj).filter((...args) => filter(...args)),
+    Object.entries(obj).filter((...args) => filter(...args))
   )
 }
 
@@ -81,13 +81,13 @@ export function filterObject<T extends Obj>(
  */
 export function arrayDiff<T extends string>(
   arr1: T[] = [],
-  arr2: T[] = [],
+  arr2: T[] = []
 ): T[] {
   return arr1.filter((item) => !arr2.includes(item))
 }
 
 export function joinOrNull(
-  value: any[] | string | null | undefined,
+  value: any[] | string | null | undefined
 ): string | null {
   if (Array.isArray(value) && value.length) {
     return value.join(i18n.global.t('words.separator'))
@@ -127,7 +127,7 @@ export function randint(min: number, max: number) {
  */
 export function getFileContent(
   file: File,
-  { base64 = false } = {},
+  { base64 = false } = {}
 ): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -147,7 +147,7 @@ export function getKeys<T extends Obj, K extends (keyof T)[]>(obj: T): K {
 }
 
 export function toEntries<T extends Record<PropertyKey, unknown>>(
-  obj: T,
+  obj: T
 ): { [K in keyof T]: [K, T[K]] }[keyof T][] {
   return Object.entries(obj) as { [K in keyof T]: [K, T[K]] }[keyof T][]
 }
@@ -160,7 +160,7 @@ export function fromEntries<
 
 export function pick<T extends Obj, K extends (keyof T)[]>(
   obj: T,
-  keys: K,
+  keys: K
 ): Pick<T, K[number]> {
   return Object.fromEntries(keys.map((key) => [key, obj[key]])) as Pick<
     T,
@@ -170,11 +170,39 @@ export function pick<T extends Obj, K extends (keyof T)[]>(
 
 export function omit<T extends Obj, K extends (keyof T)[]>(
   obj: T,
-  keys: K,
+  keys: K
 ): Omit<T, K[number]> {
   return Object.fromEntries(
     Object.keys(obj)
       .filter((key) => !keys.includes(key))
-      .map((key) => [key, obj[key]]),
+      .map((key) => [key, obj[key]])
   ) as Omit<T, K[number]>
+}
+
+const humanSizeUnits = ['k', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y']
+
+export function humanSize(size: number) {
+  function format(num: number|bigint, unit:string): string {
+    return `${num.toLocaleString(undefined, { maximumFractionDigits: 2 })}${unit}B`
+  }
+
+  if (size < 1024) {
+    return format(size, "")
+  }
+
+  const bigSize = BigInt(size)
+
+
+  let lowerBound = 0n
+
+  for (let i = 0; i < humanSizeUnits.length; i++) {
+    lowerBound = 1n << (BigInt(i) + 1n) * 10n
+    const upperBound = 1n << (BigInt(i + 1) + 1n) * 10n
+
+    if(bigSize < upperBound) {
+      return format(bigSize / lowerBound, humanSizeUnits[i])
+    }
+  }
+
+  return format(bigSize / lowerBound, humanSizeUnits[humanSizeUnits.length - 1])
 }
