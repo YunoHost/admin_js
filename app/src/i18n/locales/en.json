@@ -614,6 +614,15 @@
     "start": "Start",
     "status": "Status",
     "stop": "Stop",
+    "storage": "Storage",
+    "storage_disks": {
+      "category_name": "Hard drives",
+      "table": {
+        "disks_name": "Name",
+        "disks_serial": "Serial",
+        "disks_size": "Size"
+      }
+    },
     "system": "System",
     "system_apps_nothing": "All apps are up to date!",
     "system_packages_nothing": "All system packages are up to date!",
