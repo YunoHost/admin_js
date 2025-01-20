@@ -139,8 +139,6 @@
     "confirm_update_apps": "Möchten Sie wirklich alle Applikationen aktualisieren?",
     "confirm_upnp_enable": "Möchten Sie UPnP wirklich aktivieren?",
     "confirm_upnp_disable": "Möchten Sie UPnP wirklich deaktivieren?",
-    "confirm_firewall_allow": "Sind Sie sicher, dass Sie den Port {port} (Protokoll: {protocol}, Verbindung: {connection}) öffnen wollen?",
-    "confirm_firewall_disallow": "Sind Sie sicher, dass Sie den Port {port} (Protokoll: {protocol}, Verbindung {connection}) schliessen wollen?",
     "confirm_update_specific_app": "Möchten Sie {app} wirklich aktualisieren?",
     "confirm_reboot_action_reboot": "Möchten Sie den Server wirklich neustarten?",
     "confirm_reboot_action_shutdown": "Möchten Sie den Server wirklich herunterfahren?",

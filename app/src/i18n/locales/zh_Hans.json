@@ -195,8 +195,6 @@
     "confirm_app_install": "您确定要安装此应用吗？",
     "confirm_install_domain_root": "您确定要在 '/' 上安装此应用吗？您将无法在 {domain} 上安装任何其它应用",
     "confirm_install_custom_app": "警告！安装第三方应用可能会损害系统的完整性和安全性。除非您知道自己在做什么，否则您最好不要安装它。您愿意冒这个风险吗？",
-    "confirm_firewall_disallow": "您确定要关闭端口 {port} 吗？（协议：{protocol}，连接：{connection}）",
-    "confirm_firewall_allow": "您确定要打开端口 {port} 吗？（协议：{protocol}，连接：{connection}）",
     "confirm_delete": "您确定要删除 {name} 吗？",
     "confirm_change_maindomain": "您确定要更改主域吗？",
     "confirm_app_default": "您确定要将此应用设置为默认应用吗？",

@@ -27,8 +27,6 @@
     "logout": "Wyloguj",
     "ok": "OK",
     "confirm_app_install": "Czy na pewno chcesz zainstalować tę aplikację?",
-    "confirm_firewall_disallow": "Czy na pewno chcesz zamknąć port {port} (protocol:{protocol}, connection: {connection})",
-    "confirm_firewall_allow": "Czy na pewno chcesz otworzyć port {port} (protocol:{protocol}, connection: {connection})",
     "confirm_delete": "Czy na pewno chcesz usunąć {name}?",
     "confirm_change_maindomain": "Czy na pewno chcesz zmienić domenę podstawową?",
     "confirm_app_default": "Czy na pewno chcesz ustawić tę aplikację jako domyślną?",

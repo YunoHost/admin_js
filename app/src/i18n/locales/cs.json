@@ -153,8 +153,6 @@
     "confirm_install_domain_root": "Opravdu chcete instalovat tuto aplikaci na \"/\"? Nebude možné pak instalovat žádné další aplikace na {domain}",
     "confirm_install_custom_app": "VAROVÁNÍ! Instalace aplikací třetích stran může kompromitovat integritu a bezpečnost vašeho systému. Pravděpodobně byste toto NEMĚLI provádět, pokud opravdu nevíte, co děláte. Jste připraveni přijmout toto riziko?",
     "confirm_group_add_access_permission": "Opravdu chcete přidělit oprávnění {perm} k {name}? Tímto značně zvýšíte možnost zneužití, zejména pokud {name} nebude mít čisté úmysly. Proveďte pouze pokud DŮVĚŘUJETE této osobě/skupině.",
-    "confirm_firewall_disallow": "Opravdu chcete uzavřít port {port} (protokol: {protocol}, spojení: {connection})",
-    "confirm_firewall_allow": "Opravdu chcete otevřít {port} (protokol: {protocol}, spojení: {connection})",
     "confirm_delete": "Opravdu chcete smazat {name}?",
     "confirm_app_change_url": "Opravdu chcete změnit přístupové URL aplikace?",
     "confirm_change_maindomain": "Opravdu chcete změnit hlavní doménu?",

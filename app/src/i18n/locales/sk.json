@@ -84,8 +84,6 @@
     "confirm_app_change_url": "Naozaj chcete zmeniť prístupovú URL adresu aplikácie?",
     "confirm_app_default": "Naozaj chcete nastaviť túto aplikáciu ako predvolenú?",
     "confirm_change_maindomain": "Naozaj chcete zmeniť hlavnú doménu?",
-    "confirm_firewall_allow": "Naozaj chcete otvoriť port {port} (protokol: {protocol}, spojenie: {connection})",
-    "confirm_firewall_disallow": "Naozaj chcete zatvoriť port {port} (protokol: {protocol}, spojenie: {connection})",
     "confirm_group_add_access_permission": "Naozaj chcete udeliť oprávnenie {perm} na prístup k {name}? Týmto významne zvýšite priestor na možný útok, ak sa ukáže, že {name} nemá čisté úmysly. Toto by ste mali spraviť len vtedy, ak DÔVERUJETE tejto osobe/skupine.",
     "confirm_install_custom_app": "VAROVANIE! Inštalovaním aplikácií tretích strán môžete kompromitovať integritu a bezpečnosť Vášho systému. Pravdepodobne by ste to NEMALI robiť, ak naozaj neviete, aké môžu byť následky. Ste pripravený prijať toto riziko?",
     "confirm_install_domain_root": "Naozaj chcete nainštalovať túto aplikáciu na \"/\"? Následne nebudete môcť nainštalovať žiadne ďalšie aplikácie na {domain}",

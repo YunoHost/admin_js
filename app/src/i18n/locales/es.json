@@ -134,8 +134,6 @@
     "certificate_manage": "Administrar certificado SSL",
     "certificate": "Certificado",
     "user_mailbox_use": "Espacio utilizado",
-    "confirm_firewall_allow": "¿Está seguro de que desea abrir el puerto {port}? (protocolo: {protocol}, conexión: {connection})",
-    "confirm_firewall_disallow": "¿Está seguro de que desea cerrar el puerto {port}? (protocolo: {protocol}, conexión: {connection})",
     "confirm_service_start": "¿Está seguro de que desea iniciar {name}?",
     "confirm_service_stop": "¿Está seguro de que desea parar {name}?",
     "confirm_update_apps": "¿Está seguro de que desea actualizar todas las aplicaciones?",

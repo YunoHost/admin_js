@@ -117,8 +117,6 @@
     "backup_new": "Nova cópia de segurança",
     "check": "Verificação",
     "confirm_app_change_url": "Tem certeza que quer mudar o endereço URL para acessar esta aplicação?",
-    "confirm_firewall_allow": "Tem certeza que quer abrir a porta {port}? (protocolo: {protocol}, conexão: {connection})",
-    "confirm_firewall_disallow": "Tem certeza que quer fechar a porta {port}? (protocolo: {protocol}, conexão: {connection})",
     "confirm_install_custom_app": "CUIDADO! Instalar aplicações de terceiros pode comprometer a integridade e a segurança do seu sistema. Provavelmente NÃO deveria instalar esta aplicação se não tiver certeza do que está fazendo. Quer correr esses riscos?",
     "confirm_install_domain_root": "Não será mas capaz de instalar outras aplicações em {domain}. Quer continuar?",
     "confirm_install_app_lowquality": "Aviso: esta aplicação pode funcionar mais não está bem integrada em Yunohost. Algumas funcionalidades como logon único e/ou cópia de segurança/restauro pode não ser disponível.",
