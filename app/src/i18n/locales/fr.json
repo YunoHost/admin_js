@@ -236,7 +236,9 @@
         "link": "Lien",
         "none": "Aucun",
         "separator": ", ",
-        "valid": "Valide"
+        "valid": "Valide",
+        "comment": "Commentaire",
+        "edit": "Modifier"
     },
     "configuration": "Configuration",
     "since": "depuis",
@@ -317,7 +319,10 @@
         },
         "last_action": "Dernière action :",
         "title": "Historique",
-        "is_empty": "Rien dans l'historique pour le moment."
+        "is_empty": "Rien dans l'historique pour le moment.",
+        "check_logs": "Aller à la page du journal de l'opération.",
+        "no_logs": "Pas de journaux (logs) disponibles.",
+        "started_by": "démarré par {caller}"
     },
     "form_errors": {
         "required": "Ce champ est obligatoire.",
@@ -406,13 +411,15 @@
             "title": "Tentative de communication avec le serveur…",
             "failed": "Le serveur ne répond pas. Vous pouvez essayer de vous reconnecter ou essayer d'exécuter `systemctl restart yunohost-api` via SSH.",
             "reason": {
-                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues.",
-                "reboot": "Votre serveur redémarre et ne sera pas joignable pendant un certain temps. Une invite de connexion sera disponible dès que le serveur sera accessible.",
-                "shutdown": "Votre serveur est en cours d'extinction et n'est plus joignable. Redémarrez-le et une invitation de connexion sera disponible dès que le serveur sera joignable.",
+                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues. Peut-être que l''api-yunohost' ne répond plus ?",
+                "reboot": "Votre serveur redémarre et ne sera pas joignable pendant un certain temps.",
+                "shutdown": "Votre serveur est en train de s'arrêter et n'est plus joignable.",
                 "upgrade_system": "La connexion avec le serveur a été fermée en raison de la mise à jour de YunoHost. Il vous faut patienter jusqu'à ce que le serveur soit à nouveau joignable…"
             },
             "session_expired": "Le serveur est désormais accessible ! Mais il semble que votre session ait expiré, veuillez vous connecter."
-        }
+        },
+        "busy": "Le serveur est occupé …",
+        "unknown_request": "Demande inconnue"
     },
     "go_back": "Revenir",
     "postinstall": {
@@ -637,5 +644,7 @@
         "select_one": "Veuillez sélectionner une option"
     },
     "loading": "Chargement",
-    "quick_action": "Ajout rapide"
+    "quick_action": "Ajout rapide",
+    "confirm_firewall_close": "Êtes-vous sûr de vouloir fermer le port {port} pour le protocole {protocol} ?",
+    "confirm_firewall_open": "Êtes-vous sûr de vouloir ouvrir le port {port} pour le protocole {protocol} ?"
 }
