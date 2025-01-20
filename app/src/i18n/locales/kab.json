@@ -160,11 +160,6 @@
     "group_admins": "Inedbalen",
     "footer_version": "Yezreɛ-it <a href='https://yunohost.org'>YunoHost</a> {version} ({repo}).",
     "users_add": "Aseqdac amaynut",
-    "human_routes": {
-        "upgrade": {
-            "system": "Aleqqem n unagraw"
-        }
-    },
     "tools_yunohost_settings": "Iɣewwaṛen n YunoHost",
     "user_username_edit": "Ẓreg amaɣnu n {name}"
 }
