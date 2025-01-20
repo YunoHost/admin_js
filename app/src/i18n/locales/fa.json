@@ -119,8 +119,6 @@
     "confirm_install_domain_root": "آیا مطمئن هستید که می خواهید این برنامه را روی '/' نصب کنید؟ شما نمی توانید برنامه دیگری در {domain} نصب کنید",
     "confirm_install_custom_app": "هشدار! نصب برنامه های شخص ثالث ممکن است یکپارچگی و امنیت سیستم شما را به خطر بیندازد. احتمالاً نباید آن را نصب کنید مگر اینکه بدانید در حال انجام چه کاری هستید. آیا حاضرید این ریسک را انجام دهید؟",
     "confirm_group_add_access_permission": "آیا مطمئن هستید که می خواهید اجازه دسترسی {perm} را به {name} بدهید؟اگر {name} یک شخص مخرب باشد ، چنین دسترسی به میزان قابل توجهی سطح حمله را افزایش می دهد. شما این سطح دسترسی را فقط باید به شخص/گروهی که اعتماد کامل دارید اعطاء کنید.",
-    "confirm_firewall_disallow": "آیا مطمئن هستید برای بستن پورت {port} (پروتکل: {protocol}, ارتباط: {connection})",
-    "confirm_firewall_allow": "آیا مطمئن هستید برای بازکردن پورت {port} (پروتکل: {protocol}, ارتباط: {connection})",
     "confirm_delete": "آیا مطمئن هستیدبرای حذف {name} ؟",
     "confirm_change_maindomain": "آیا مطمئن هستید که می خواهید دامنه اصلی را تغییر دهید؟",
     "confirm_app_default": "آیا مطمئن هستید که می خواهید این برنامه را پیش فرض قراردهید؟",
@@ -234,76 +232,6 @@
     "save": "ذخیره",
     "running": "درحال اجرا",
     "run": "اجرا",
-    "human_routes": {
-        "users": {
-            "update": "به روزرسانی کاربر: '{name}'",
-            "delete": "حذف کاربر: '{name}'",
-            "create": "ایجاد کاربر: '{name}'"
-        },
-        "upgrade": {
-            "app": "ارتقاء برنامه کاربردی '{app}'",
-            "apps": "ارتقاء تمام برنامه های کاربردی",
-            "system": "ارتقاء سیستم"
-        },
-        "update": "برای بروزرسانی ها بررسی کنید",
-        "shutdown": "خاموش کردن سرور",
-        "share_logs": "ایجاد پیوند برای گزارش '{name}'",
-        "services": {
-            "stop": "توقف سرویس '{name}'",
-            "start": "شروع سرویس '{name}'",
-            "restart": "راه اندازی مجدد سرویس '{name}'"
-        },
-        "reboot": "راه اندازی مجدد سِرور",
-        "postinstall": "اجرای پس از نصب",
-        "permissions": {
-            "remove": "حذف دسترسی '{name}' به '{perm}'",
-            "add": "اجازه دهید '{name}' به '{perm}' دسترسی پیدا کند"
-        },
-        "migrations": {
-            "skip": "ردکردن مهاجرت ها",
-            "run": "اجرای مهاجرت ها"
-        },
-        "groups": {
-            "remove": "حذف '{user}' از گروه '{name}'",
-            "add": "افزودن '{user}' به گروه '{name}'",
-            "delete": "حذف گروه '{name}'",
-            "create": "ایجاد گروه '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} پورت {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "'{name}' را به عنوان دامنه پیش فرض تنظیم کنید",
-            "delete": "حذف دامنه '{name}'",
-            "add": "افزودن دامنه '{name}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "حذف هشدار",
-                "error": "حذف خطا"
-            },
-            "run_specific": "اجرای '{description}' عیب یابی",
-            "run": "اجرای عیب یابی",
-            "ignore": {
-                "warning": "نادیده گرفتن هشدار",
-                "error": "نادیده گرفتن خطاء"
-            }
-        },
-        "backups": {
-            "restore": "بازیابی نسخه پشتیبان '{name}'",
-            "delete": "حذف نسخه پشتیبان '{name}'",
-            "create": "پشتیبان تهیه کنید"
-        },
-        "apps": {
-            "update_config": "به روزرسانی پیکربندی برنامه '{name}'",
-            "uninstall": "حذف برنامه '{name}'",
-            "set_default": "تغییر مسیر ریشه دامنه '{domain}' به '{name}'",
-            "install": "نصب برنامه '{name}'",
-            "change_url": "تغییر آدرس دسترسی از '{name}'",
-            "change_label": "تغییر برچسب از '{prevName}' به '{nextName}'"
-        }
-    },
     "restart": "راه اندازی مجدد",
     "restore": "بازگرداندن",
     "rerun_diagnosis": "عیب یابی مجدد",

@@ -190,7 +190,6 @@
     "confirm_app_default": "このアプリをデフォルトに変更してよろしいですか？",
     "confirm_app_install": "このアプリケーションをインストールしますか？",
     "confirm_change_maindomain": "メインドメインを変更してもよろしいですか？",
-    "confirm_firewall_disallow": "閉鎖してもよろしいですか？ port {port} (protocol: {protocol}, connection: {connection})",
     "confirm_install_app_broken": "警告！このアプリケーションはYunoHostの自動テストによると壊れており、あなたのシステムを壊す可能性があります！あなたが何をやろうとしているか十分に理解していないのであれば、インストールをするべきではありません。リスクを承知で実行しますか？",
     "confirm_install_app_lowquality": "警告: このアプリケーションはおそらく動きますが、YunoHostとよく統合されていません。いくつかの機能(シングルサインオン、バックアップ/リストアなど)はおそらく使えません。",
     "confirm_install_domain_root": "このアプリを'/'(root)にインストールしてもよろしいですか？その場合、 {domain} に対して他のアプリをインストールできなくなります",
@@ -326,86 +325,6 @@
     },
     "home": "ホーム",
     "hook_data_mail": "メール",
-    "human_routes": {
-        "reconnecting": "再接続",
-        "backups": {
-            "delete": "バックアップを削除’する {name}'",
-            "restore": "バックアップを復元する ‘{name}’",
-            "create": "バックアップを作成する"
-        },
-        "domains": {
-            "cert_install": "証明書 ‘{name}’ をインストールする",
-            "cert_renew": "証明書 ‘{name}’ を再発行する",
-            "delete": "ドメイン ‘{name}’ を削除する",
-            "push_dns_changes": "‘{name}’ DNSレコードを登録する",
-            "set_default": "‘{name}’ をデフォルトドメインに設定",
-            "add": "ドメイン ‘{name}’ を追加する",
-            "update_config": "ドメイン ’{name}’ の設定パネル ’{id}’ を更新"
-        },
-        "migrations": {
-            "run": "移行を実行する",
-            "skip": "移行をスキップする"
-        },
-        "reboot": "サーバーを再起動する",
-        "services": {
-            "restart": "サービス ‘{name}’ をリスタートする",
-            "start": "サービス ‘{name}’ をスタートする",
-            "stop": "サービス ‘{name}’ をストップする"
-        },
-        "shutdown": "サーバーをシャットダウンする",
-        "update": "アップデートを確認する",
-        "upgrade": {
-            "app": "アプリ '{app}' をアップグレードする",
-            "apps": "全てのアプリをアップグレードする",
-            "system": "システムをアップグレードする"
-        },
-        "apps": {
-            "action_config": "‘{name}’ アプリのアクション ’{action}' を実行する",
-            "change_label": "ラベルを '{prevName}' から '{nextName}' に変更",
-            "change_url": "'{name}' のアクセスURLを変更",
-            "install": "アプリをインストール ‘{name}’",
-            "set_default": "'{domain}' ドメインのルートを '{name}' にリダイレクト",
-            "dismiss_notification": "'{name}' の通知を消去する",
-            "uninstall": "アプリ ‘{name}’ を削除する",
-            "update_config": "'{name}' の ‘{id}’ パネル設定をアップデートする"
-        },
-        "diagnosis": {
-            "ignore": {
-                "error": "エラーを無視する",
-                "warning": "警告を無視する"
-            },
-            "run": "診断を実行する",
-            "run_specific": "'{description}' 診断を実行する",
-            "unignore": {
-                "error": "エラーを無視しない",
-                "warning": "警告を無視しない"
-            }
-        },
-        "groups": {
-            "add": "'{user}' をグループ '{name}' に追加",
-            "create": "グループ ‘{name}’ を作成する",
-            "delete": "グループ ‘{name}’ を削除する",
-            "remove": "'{user}' をグループ '{name}' から削除する"
-        },
-        "users": {
-            "create": "ユーザー ‘{name}’ を作成する",
-            "delete": "ユーザー ‘{name}’ を削除する",
-            "update": "ユーザー ‘{name}’ を更新する"
-        },
-        "firewall": {
-            "ports": "{action} ポート {port} ({protocol}, {connection})",
-            "upnp": "{action} UPnP"
-        },
-        "permissions": {
-            "add": "'{name}' に '{perm}' アクセスを許可する",
-            "remove": "'{name}' の '{perm}' アクセス許可を剥奪する"
-        },
-        "postinstall": "ポストインストールを実行する",
-        "settings": {
-            "update": "'{panel}' のグローバル設定を更新する"
-        },
-        "share_logs": "ログ '{name}' へのリンクを生成する"
-    },
     "ignore": "無視",
     "infos": "情報",
     "install": "インストール",
@@ -501,7 +420,6 @@
     "check": "チェック",
     "code": "コード",
     "confirm_delete": "{name} を削除してもよろしいですか？",
-    "confirm_firewall_allow": "開放してもよろしいですか？ port {port} (protocol: {protocol}, connection: {connection})",
     "confirm_group_add_access_permission": "本当に {perm} 権限を {name} へ許可しますか？このような権限は、 {name} が悪意のある人物であった場合、攻撃経路を大幅に増やします。この人物／グループを **信頼** できる場合にのみ許可してください。",
     "confirm_install_app_inprogress": "警告！このアプリケーションはまだ実験段階であり、あなたのシステムを壊す可能性があります！あなたが何をやろうとしているか十分に理解していないのであれば、インストールをするべきではありません。リスクを承知で実行しますか？",
     "confirm_install_custom_app": "警告！サードパーティのアプリケーションをインストールすると、システムの完全性とセキュリティが損なわれる可能性があります。あなたが何をやろうとしているか十分に理解していないのであれば、インストールをするべきではありません。リスクを承知で実行しますか？",

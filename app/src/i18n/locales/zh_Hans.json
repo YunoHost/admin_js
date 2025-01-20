@@ -195,8 +195,6 @@
     "confirm_app_install": "您确定要安装此应用吗？",
     "confirm_install_domain_root": "您确定要在 '/' 上安装此应用吗？您将无法在 {domain} 上安装任何其它应用",
     "confirm_install_custom_app": "警告！安装第三方应用可能会损害系统的完整性和安全性。除非您知道自己在做什么，否则您最好不要安装它。您愿意冒这个风险吗？",
-    "confirm_firewall_disallow": "您确定要关闭端口 {port} 吗？（协议：{protocol}，连接：{connection}）",
-    "confirm_firewall_allow": "您确定要打开端口 {port} 吗？（协议：{protocol}，连接：{connection}）",
     "confirm_delete": "您确定要删除 {name} 吗？",
     "confirm_change_maindomain": "您确定要更改主域吗？",
     "confirm_app_default": "您确定要将此应用设置为默认应用吗？",
@@ -312,86 +310,6 @@
             "first_user_help": "此用户将被授予管理员权限，并被允许连接到该管理界面以及通过 SSH 直接连接到服务器。\n由于它是普通用户，您还可以使用其凭据连接到用户门户 (SSO)。\n安装后流程完成后，您将能够通过将其他管理员用户添加到 '管理员' 组来创建其他管理员用户。",
             "title": "创建第一个管理员用户"
         }
-    },
-    "human_routes": {
-        "backups": {
-            "restore": "还原备份 '{name}'",
-            "delete": "删除备份 '{name}'",
-            "create": "创建备份"
-        },
-        "apps": {
-            "update_config": "更新应用 '{name}' 配置的面板 '{id}'",
-            "uninstall": "卸载应用 '{name}'",
-            "set_default": "将 '{domain}' 域根目录重定向到 '{name}'",
-            "install": "安装应用 '{name}'",
-            "change_url": "更改 '{name}' 的访问网址",
-            "change_label": "为 '{nextName}' 更改 '{prevName}' 的标签",
-            "action_config": "运行应用 '{name}' 配置的操作 '{action}'",
-            "dismiss_notification": "关闭 '{name}' 的通知"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} 端口 {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "将 '{name}' 设置为默认域",
-            "delete": "删除域 '{name}'",
-            "add": "添加域 '{name}'",
-            "cert_install": "为 '{name}' 安装证书",
-            "cert_renew": "续订 '{name}' 的证书",
-            "push_dns_changes": "将 '{name}' 的 DNS 记录推送到注册商",
-            "update_config": "更新域 '{name}' 配置的面板 '{id}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "忽略警告",
-                "error": "忽略错误"
-            },
-            "run_specific": "运行 '{description}' 诊断",
-            "run": "运行诊断",
-            "ignore": {
-                "warning": "忽略警告",
-                "error": "忽略错误"
-            }
-        },
-        "share_logs": "为日志 '{name}' 生成链接",
-        "services": {
-            "stop": "停止服务 '{name}'",
-            "start": "启动服务 '{name}'",
-            "restart": "重启服务 '{name}'"
-        },
-        "reboot": "重启服务器",
-        "postinstall": "运行安装后流程",
-        "permissions": {
-            "remove": "删除 '{name}' 对 '{perm}' 的访问权限",
-            "add": "允许 '{name}' 访问 '{perm}'"
-        },
-        "migrations": {
-            "skip": "跳过迁移",
-            "run": "运行迁移"
-        },
-        "groups": {
-            "remove": "从群组 '{name}' 中删除 '{user}'",
-            "add": "将 '{user}' 添加到群组 '{name}'",
-            "delete": "删除群组 '{name}'",
-            "create": "创建群组 '{name}'"
-        },
-        "shutdown": "关闭服务器",
-        "users": {
-            "update": "更新用户 '{name}'",
-            "delete": "删除用户 '{name}'",
-            "create": "创建用户 '{name}'"
-        },
-        "upgrade": {
-            "app": "升级 '{app}' 应用",
-            "apps": "升级所有应用",
-            "system": "升级系统"
-        },
-        "update": "检查更新",
-        "settings": {
-            "update": "更新 '{panel}' 全局设置"
-        },
-        "reconnecting": "正在重新连接"
     },
     "restart": "重启",
     "restore": "恢复",

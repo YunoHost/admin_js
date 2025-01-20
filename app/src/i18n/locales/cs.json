@@ -153,8 +153,6 @@
     "confirm_install_domain_root": "Opravdu chcete instalovat tuto aplikaci na \"/\"? Nebude možné pak instalovat žádné další aplikace na {domain}",
     "confirm_install_custom_app": "VAROVÁNÍ! Instalace aplikací třetích stran může kompromitovat integritu a bezpečnost vašeho systému. Pravděpodobně byste toto NEMĚLI provádět, pokud opravdu nevíte, co děláte. Jste připraveni přijmout toto riziko?",
     "confirm_group_add_access_permission": "Opravdu chcete přidělit oprávnění {perm} k {name}? Tímto značně zvýšíte možnost zneužití, zejména pokud {name} nebude mít čisté úmysly. Proveďte pouze pokud DŮVĚŘUJETE této osobě/skupině.",
-    "confirm_firewall_disallow": "Opravdu chcete uzavřít port {port} (protokol: {protocol}, spojení: {connection})",
-    "confirm_firewall_allow": "Opravdu chcete otevřít {port} (protokol: {protocol}, spojení: {connection})",
     "confirm_delete": "Opravdu chcete smazat {name}?",
     "confirm_app_change_url": "Opravdu chcete změnit přístupové URL aplikace?",
     "confirm_change_maindomain": "Opravdu chcete změnit hlavní doménu?",
@@ -235,76 +233,6 @@
     },
     "save": "Uložit",
     "running": "Provádí se",
-    "human_routes": {
-        "users": {
-            "update": "Editovat uživatele '{name}'",
-            "delete": "Smazat uživatele '{name}'",
-            "create": "Založit uživatele '{name}'"
-        },
-        "upgrade": {
-            "app": "Aktualizovat '{app}' aplikaci",
-            "apps": "Aktualizovat všechny aplikace",
-            "system": "Aktualizovat systém"
-        },
-        "update": "Zkontrolovat aktualizace",
-        "shutdown": "Vypnout server",
-        "share_logs": "Vygenerovat odkaz pro záznam '{name}'",
-        "services": {
-            "stop": "Zastavit službu '{name}'",
-            "start": "Spustit službu '{name}'",
-            "restart": "Restartovat službu '{name}'"
-        },
-        "reboot": "Restartovat server",
-        "postinstall": "Spustit post instalační akce",
-        "permissions": {
-            "remove": "Odebrat '{name}' přístup k '{perm}'",
-            "add": "Povolit '{name}' přístup k '{perm}'"
-        },
-        "migrations": {
-            "skip": "Přeskočit migrace",
-            "run": "Spustit migrace"
-        },
-        "groups": {
-            "remove": "Odstranit '{user}' ze skupiny '{name}'",
-            "add": "Přidat '{user}' do skupiny '{name}'",
-            "delete": "Smazat skupinu '{name}'",
-            "create": "Založit skupinu '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} port {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "Nastavit '{name}' jako výchozí doménu",
-            "delete": "Smazat doménu '{name}'",
-            "add": "Přidat doménu '{name}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Smazat ignoraci varování",
-                "error": "Smazat ignoraci chyby"
-            },
-            "run_specific": "Spustit '{description}' diagnostiku",
-            "run": "Znovu spustit diagnostiku",
-            "ignore": {
-                "warning": "Ignorovat varování",
-                "error": "Ignorovat chybu/hlášení"
-            }
-        },
-        "backups": {
-            "restore": "Obnovit zálohu '{name}'",
-            "delete": "Smazat zálohu '{name}'",
-            "create": "Vytvořit zálohu"
-        },
-        "apps": {
-            "update_config": "Upravit konfiguraci aplikace '{name}'",
-            "uninstall": "Odinstalovat aplikaci '{name}'",
-            "set_default": "Přesměrovat '{domain}' doménový kořen na '{name}'",
-            "install": "Instalovat aplikaci '{name}'",
-            "change_url": "Změnit přístupové URL '{name}'",
-            "change_label": "Změnit popis z '{prevName}' na '{nextName}'"
-        }
-    },
     "logs_no_logs_registered": "V této kategorii není žádný záznam",
     "logs_app": "Aplikační záznamy",
     "logs_service": "Záznamy služeb",
