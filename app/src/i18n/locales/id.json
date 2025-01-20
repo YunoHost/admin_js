@@ -570,8 +570,6 @@
     "migrations_disclaimer_not_checked": "Migrasi ini memerlukan Anda mengetahui peringatannya sebelum bisa dijalankan.",
     "logs_path": "Jalur",
     "permission_show_tile_enabled": "Terlihat sebagai kisi di portal pengguna",
-    "confirm_firewall_allow": "Apakah Anda yakin ingin membuka port {port}? (protokol: {protocol}, koneksi: {connection})",
-    "confirm_firewall_disallow": "Apakah Anda yakin ingin menutup port {port}? (protokol: {protocol}, koneksi: {connection})",
     "manage_domains": "Kelola domain",
     "migrations_pending": "Migrasi yang tertunda",
     "operations": "Tindakan",

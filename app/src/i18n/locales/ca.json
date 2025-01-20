@@ -26,8 +26,6 @@
     "confirm_app_default": "Està segur de voler fer aquesta aplicació predeterminada?",
     "confirm_change_maindomain": "Està segur de voler canviar el domini principal?",
     "confirm_delete": "Està segur de voler eliminar {name}?",
-    "confirm_firewall_allow": "Esteu segurs de voler obrir el port {port}? (protocol: {protocol}, connexió: {connection})",
-    "confirm_firewall_disallow": "Esteu segurs de voler tancar el port {port}? (protocol: {protocol}, connexió: {connection})",
     "confirm_install_custom_app": "ATENCIÓ! La instal·lació d'aplicacions de terceres parts pot comprometre la integritat i seguretat del seu sistema. No hauríeu d'instal·lar-ne a no ser que sapigueu el que feu. Esteu segurs de voler córrer aquest risc?",
     "confirm_install_domain_root": "Segur voleu instal·lar aquesta aplicació a «/»? No podreu instal·lar cap altra aplicació a {domain}",
     "confirm_migrations_skip": "Saltar-se les migracions no està recomanat. Està segur de voler continuar?",

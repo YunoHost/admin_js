@@ -65,8 +65,6 @@
     },
     "add": "Lisää",
     "action": "Toiminta",
-    "confirm_firewall_disallow": "Haluatko varmasti sulkea portin {port} (protokooli: {protocol}, yhteys: {connection})",
-    "confirm_firewall_allow": "Haluatko varmasti avata portin {port} (protokooli: {protocol}, yhteys: {connection})",
     "confirm_delete": "Oletko varma että haluat poistaa {name}?",
     "confirm_change_maindomain": "Haluatko varmasti vaihtaa pääverkkotunnuksen?",
     "confirm_app_default": "Haluatko varmasti asettaa tämän sovelluksen oletukseksi?",

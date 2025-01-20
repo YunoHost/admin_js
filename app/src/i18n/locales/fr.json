@@ -142,8 +142,6 @@
     "certificate_manage": "Gérer les certificats SSL",
     "certificate": "Certificat",
     "user_mailbox_use": "Espace utilisé de la boite aux lettres",
-    "confirm_firewall_allow": "Voulez-vous vraiment ouvrir le port {port} ? (protocole : {protocol}, connexion : {connection})",
-    "confirm_firewall_disallow": "Voulez-vous vraiment fermer le port {port} ? (protocole : {protocol}, connexion : {connection})",
     "confirm_service_start": "Voulez-vous vraiment démarrer {name} ?",
     "confirm_service_stop": "Voulez-vous vraiment arrêter {name} ?",
     "confirm_update_apps": "Voulez-vous vraiment mettre à jour toutes les applications ?",

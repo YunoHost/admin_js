@@ -136,8 +136,6 @@
     "app_info_changeurl_desc": "Cambia l'URL di accesso di questa applicazione (dominio e/o percorso).",
     "app_info_change_url_disabled_tooltip": "Questa funzionalità non è ancora stata implementata in questa applicazione",
     "confirm_app_change_url": "Sei sicuro di voler cambiare l'URL di accesso all'applicazione ?",
-    "confirm_firewall_allow": "Sei sicuro di voler aprire la porta {port}? (protocollo: {protocol}, connessione: {connection})",
-    "confirm_firewall_disallow": "Sei sicuro di voler chiudere la porta {port}? (protocollo: {protocol}, connessione: {connection})",
     "confirm_migrations_skip": "Saltare le migrazioni è sconsigliato. Sei sicuro di volerlo fare?",
     "confirm_service_start": "Sei sicuro di voler eseguire {name}?",
     "confirm_service_stop": "Sei sicuro di voler fermare {name}?",

@@ -285,7 +285,6 @@
         "APIInternalError": "YunoHost \"internal\" bir hata ile karşılaştı"
     },
     "app_show_categories": "Kategorileri göster",
-    "confirm_firewall_allow": "{port} bağlantı noktasını açmak istediğinizden emin misiniz? (protokol: {protocol}, bağlantı: {connection})",
     "domain_add_dyndns_forbidden": "Zaten Yunohost'dan bir DynDNS alan adına kayıt oldunuz/abone oldunuz. Yapısı gereği bu özellik server başına bir alan adı ile sınırlıdır. Eğer önceden kayıt ettirdiğiniz bir domaine alt-alan adı eklemek istiyorsanız lütfen\"Kendime ait bir alan adı veya alt-alan adı eklemeyi seçin. Eğer tamamen farklı bir alan adı kullanmak istiyorsanız, öncelikle varolan DynDNS alan adınızı silmeniz gereklidir. DynDNS Self-Host(Kendinde barındırma Türkçe karşılığı)'a başlarken iyidir fakat belli bir zamandan sonra, gerçekten kendine ait bir alan adı almanızı tavsiye ediyoruz.",
     "domain_dns_push_failed_to_authenticate": "Yetkilendirme başarısız oldu. Büyük ihtimalle <a href='#/domains/{domain}/config'>kimlik bilgileri</a> hatalı? (Hata: {error})",
     "experimental_warning": "Uyarı: Bu özellik deneyseldir ve istikrarlı olarak kabul edilmez, ne yaptığınızı bilmiyorsanız kullanmamalısınız.",
@@ -319,7 +318,6 @@
     "backup_new": "Yeni yedek",
     "confirm_app_change_url": "Uygulama erişim URL'sini değiştirmek istediğinizden emin misiniz?",
     "confirm_app_default": "Bu uygulamayı varsayılan yapmak istediğinizden emin misiniz?",
-    "confirm_firewall_disallow": "{port} bağlantı noktasını kapatmak istediğinizden emin misiniz? (protokol: {protocol}, bağlantı: {connection})",
     "confirm_group_add_access_permission": "{name} için {perm} erişimi vermek istediğinizden emin misiniz? {name} kötü niyetli bir kişi olursa, bu tür erişim saldırı yüzeyini önemli ölçüde artırır. Bunu yalnızca bu kişiye/gruba GÜVENİYORSANIZ yapmalısınız.",
     "confirm_install_custom_app": "UYARI! 3. taraf uygulamaları yüklemek, sisteminizin bütünlüğünü ve güvenliğini tehlikeye atabilir. Ne yaptığınızı bilmiyorsanız muhtemelen KURMAMALISINIZ. Bu riski almaya hazır mısınız?",
     "confirm_install_domain_root": "Bu uygulamayı kök dizin '/' üzerine kurmak istediğinizden emin misiniz? {domain} alan adına başka bir uygulama yükleyemeyeceksiniz",
