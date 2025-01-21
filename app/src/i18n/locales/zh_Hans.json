@@ -75,7 +75,10 @@
         },
         "title": "历史记录",
         "last_action": "上次操作：",
-        "is_empty": "暂无历史记录。"
+        "is_empty": "暂无历史记录。",
+        "check_logs": "转到操作日志页面。",
+        "no_logs": "没有可用的日志。",
+        "started_by": "由 {caller} 启动"
     },
     "permissions": "权限",
     "group_add": "添加群组",
@@ -184,7 +187,7 @@
     "footer_version": "由 <a href='https://yunohost.org'>YunoHost</a> {version} ({repo}) 提供支持。",
     "experimental_warning": "警告：这个功能是实验性的，并不被认为是稳定的，您不应该使用它，除非您知道您在做什么。",
     "everything_good": "一切正常！",
-    "error_connection_interrupted": "服务器关闭了连接而不是回应它。 nginx 或 yunohost-api 是否因某种原因重启或停止？",
+    "error_connection_interrupted": "服务器关闭了连接而不是回应它。nginx 或 yunohost-api 是否因某种原因重启或停止？",
     "error_modify_something": "您应该修改一些东西",
     "domain_delete_forbidden_desc": "您无法删除 '{domain}'，因为它是默认域，您需要选择另一个域（或<a href='#/domains/add'>添加一个新域</a>）并将其设置为默认域能够删除它。",
     "domain_default_desc": "默认域是用户登录的连接域。",
@@ -244,8 +247,10 @@
                 "shutdown": "您的服务器正在关闭并且无法再访问。请重新启机，当服务器可以访问时，登录提示将会出现。"
             },
             "title": "正在尝试与服务器通信…",
-            "session_expired": "服务器现在可以访问了！ 但您的会话似乎已过期，请登录。"
-        }
+            "session_expired": "服务器现在可以访问了！但您的会话似乎已过期，请登录。"
+        },
+        "busy": "服务器正忙…",
+        "unknown_request": "未知请求"
     },
     "ignored": "{count} 已忽略",
     "items": {
@@ -263,7 +268,7 @@
     "issues": "{count} 个问题",
     "label_for_manifestname": "{name} 的标签",
     "mailbox_quota_placeholder": "设置为 0 以禁用。",
-    "mailbox_quota_example": "700M是一张CD，4700M是一张DVD",
+    "mailbox_quota_example": "700M 是一张 CD，4700M 是一张 DVD",
     "mailbox_quota_description": "设置电子邮件内容的存储大小限制。<br>设置为 0 以禁用。",
     "nobody": "无人",
     "no": "否",
@@ -345,7 +350,7 @@
     "tools_reboot_btn": "重启",
     "tools_reboot": "重启您的服务器",
     "tools": "工具",
-    "tip_about_user_email": "用户创建时带有一个关连的电子邮件地址（和XMPP账号），格式为username{'@'}domain.tld。额外的电子邮件别名和电子邮件转发可稍后由管理员和用户添加。",
+    "tip_about_user_email": "用户创建时带有一个关连的电子邮件地址（和 XMPP 账号），格式为 username{'@'}domain.tld。额外的电子邮件别名和电子邮件转发可稍后由管理员和用户添加。",
     "tcp": "TCP",
     "tools_webadmin_settings": "网站管理设置",
     "tools_webadmin": {
@@ -379,7 +384,9 @@
         "none": "无",
         "separator": ", ",
         "valid": "有效",
-        "browse": "浏览"
+        "browse": "浏览",
+        "comment": "备注",
+        "edit": "编辑"
     },
     "warnings": "{count} 个警告",
     "version": "版本",
@@ -637,5 +644,7 @@
         "postinstall_acknowledgement": "YunoHost 项目是一个由志愿者组成的团队，其共同目标是创建一个名为 YunoHost 的自由服务器操作系统。YunoHost 软件根据[AGPLv3 许可证](https://www.gnu.org/licenses/agpl-3.0.txt)发布。与此软件相关，此项目管理并提供多种用于各种目的的技术和社区服务。使用这些服务，即表示您同意受以下[服务条款](https://yunohost.org/terms_of_services)的约束。"
     },
     "install_app": "安装应用",
-    "quick_action": "快捷操作"
+    "quick_action": "快捷操作",
+    "confirm_firewall_open": "您确定要为协议 {protocol} 打开端口 {port} 吗？",
+    "confirm_firewall_close": "您确定要为协议 {protocol} 关闭端口 {port} 吗？"
 }
