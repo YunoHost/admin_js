@@ -400,13 +400,14 @@
             "title": "Versuche mit dem Server zu kommunizieren…",
             "failed": "Der Server scheint nicht zu antworten. Sie können versuchen, sich neu zu verbinden oder probieren `systemctl restart yunohost-api` über ssh auszuführen.",
             "reason": {
-                "unknown": "Die Verbindung mit dem Server wurde aus unbekannten Gründen beendet.",
-                "reboot": "Ihr Server startet neu und wird für einige Zeit nicht erreichbar sein. Eine Login-Aufforderung wird erscheinen, sobald der Server wieder erreichbar ist.",
-                "shutdown": "Ihr Server wird heruntergefahren und ist nicht mehr erreichbar. Schalten Sie ihn wieder ein und eine Anmeldeaufforderung wird angezeigt, sobald der Server erreichbar ist.",
+                "unknown": "Die Verbindung mit dem Server wurde aus unbekannten Gründen geschlossen. Vielleicht ist 'yunohost-api' nicht erreichbar?",
+                "reboot": "Ihr Server wird neu gestartet und ist für einige Zeit nicht erreichbar.",
+                "shutdown": "Ihr Server wird heruntergefahren und ist nicht mehr erreichbar.",
                 "upgrade_system": "Die Verbindung mit dem Server wurde aufgrund einer YunoHost-Aktualisierung beendet. Warten Sie bis der Server wieder erreichbar ist…"
             },
             "session_expired": "Der Server ist jetzt erreichbar! Aber es sieht so aus, als wäre Ihre Sitzung abgelaufen, bitte melden Sie sich an."
-        }
+        },
+        "busy": "Der Server ist beschäftigt…"
     },
     "hook_data_xmpp": "XMPP-Daten",
     "hook_conf_manually_modified_files": "Manuell geänderte Konfigurationen",
@@ -476,7 +477,7 @@
             "from_local_desc": "Wenn Sie keinen \"echten\" öffentlichen Domänennamen wünschen, können Sie hier alles verwenden, was in <code>.local</code> oder <code>.test</code> endet. Domänennamen welche in <code>.local</code> enden, sind in dem Sinne speziell, als dass sie in Ihrem lokalen Netzwerk automatisch aufgelöst werden können, angenommen Ihre Clients unterstützen das Bonjour-Protokoll. Als Alternative dazu können Sie Ihre <code>/etc/hosts</code> -Datei ( oder äquivalent für Windows ) auf jedem Ihrer Clients so einstellen, von welchen aus Sie diese Domäne benützen wollen, oder indem Sie die lokalen DNS-Einträge in Ihrem Internet-Router entsprechend konfigurieren.",
             "dyn_dns_password": "Domainwiederherstellungspasswort",
             "from_local": "Ich will eine Domain ausschließlich für die lokale / testweise Verwendung",
-            "from_registrar": "Ich möchte eine eigene Domain oder eine Subdomain hinzufügen",
+            "from_registrar": "Ich möchte eine Domain hinzufügen, die ich besitze",
             "from_registrar_desc": "Sie müssen gegebenenfalls die DNS-Konfiguration bei ihrem Registrar vervollständigen. Die Diagnose von Yunohost zeigt Ihnen an, welche Records Sie noch konfigurieren müssen.",
             "from_yunohost": "Ich besitze keine Domain, Ich möchte eine kostenlose DynDNS-Domain des Yunohost Projektes nutzen",
             "from_yunohost_desc": "Das YunoHost-Projekt unterhält einen kostenlosen 'DynDNS'-Service. Dieser ist limitiert auf eine einzige solche Domäne pro Server (Sie können trotzdem später eine Subdomain mit der obigen Option 'Ich will eine Domäne, die in meinem Besitz ist, hinzufügen, oder eine Subdomain' hinzufügen). Die DNS-Konfiguration wird automatisch von YunoHost gehandhabt. Dies ist ideal, wenn Sie mit Self-Hosting überhaupt erst beginnen und Sie noch nicht in einen Domainname investieren möchten. Wie auch immer, mittel/-langfristig empfehlen wir der Kauf eines eigenen Domainnames bei einem Registrar, um das vollständige Eigentum über Ihre Domäne zu erlangen.",
@@ -635,5 +636,7 @@
     "form": {
         "current_file": "Aktuelle Datei:",
         "select_one": "Bitte wählen Sie eine Option"
-    }
+    },
+    "confirm_firewall_open": "Sind Sie sicher, dass Sie Port {port} für das Protokoll {protocol} öffnen wollen?",
+    "confirm_firewall_close": "Sind Sie sicher, dass Sie Port {port} für Protokoll {protocol} schließen wollen?"
 }
