@@ -31,13 +31,15 @@
             "title": "Intentando comunicarse co servidor…",
             "failed": "Semella que o servidor non responde. Podes intentar volver conectar ou intenta executar `systemctl restart yunohost-api`por ssh.",
             "reason": {
-                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas.",
-                "reboot": "O servidor está reiniciando e non estará dispoñible por uns minutos. O formulario de conexión estará dispoñible tan pronto o servidor sexa accesible.",
-                "shutdown": "O servidor estase apagando e non está dispoñible. Acéndeo e o formulario de conexión estará dispoñible tan pronto o servidor sexa accesible.",
+                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas. Comproba que 'yunohost-api' está activa.",
+                "reboot": "O servidor está reiniciando e non estará dispoñible durante este proceso.",
+                "shutdown": "O servidor estase apagando e non está dispoñible.",
                 "upgrade_system": "Pechouse a conexión ao servidor debido á actualización de YunoHost. Agardando a que o servidor sexa accesible…"
             },
             "session_expired": "O servidor xa é accesible! Pero semella que caducou a túa sesión, volve a acceder."
-        }
+        },
+        "busy": "O servidor está ocupado…",
+        "unknown_request": "Solicitude descoñecida"
     },
     "all": "Todo",
     "administration_password": "Contrasinal de administración",
@@ -232,7 +234,10 @@
         },
         "last_action": "Última acción:",
         "title": "Historial",
-        "is_empty": "Por agora non hai nada no historial."
+        "is_empty": "Por agora non hai nada no historial.",
+        "check_logs": "Ir á páxina do rexistro da operación.",
+        "no_logs": "Sen rexistros dispoñibles.",
+        "started_by": "comezada por {caller}"
     },
     "permissions": "Permisos",
     "groups_and_permissions_manage": "Xestionar grupos e permisos",
@@ -411,7 +416,9 @@
         "link": "Ligazón",
         "none": "Ningún",
         "separator": ", ",
-        "valid": "Válido"
+        "valid": "Válido",
+        "comment": "Comentar",
+        "edit": "Editar"
     },
     "warnings": "{count} avisos",
     "version": "Versión",
@@ -637,5 +644,7 @@
     "catalog_partial_search": "Intenta eliminar todos os criterios de filtro para ver se así aparece na busca.",
     "loading": "Cargando",
     "quick_action": "Acción rápida",
-    "install_app": "Instalar unha app"
+    "install_app": "Instalar unha app",
+    "confirm_firewall_open": "Tes certeza de querer abrir o porto {port} para o protocolo {protocol}?",
+    "confirm_firewall_close": "Tes certeza de querer pechar o porto {port} para o protocolo {protocol}?"
 }
