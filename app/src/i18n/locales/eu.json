@@ -28,13 +28,15 @@
             "title": "Zerbitzariarekin komunikatzeko ahaleginetan…",
             "failed": "Badirudi zerbitzaria ez dela erantzuten ari. SSH bidez berriro konektatzen saia zaitezke `systemctl restart yunohost-api` exekutatuz.",
             "reason": {
-                "unknown": "Itxi da komunikazioa zerbitzariarekin, ez da zergatia ezagutzen.",
-                "reboot": "Zerbitzaria berrabiarazten ari da eta ez da erabilgarri egongo tarte batez. Saioa hasteko galdegingo zaizu zerbitzaria berriro ere erabilgarri dagoenean.",
-                "shutdown": "Zerbitzari itzaltzen ari da eta aurrerantzean ez da erabilgarri egongo. Piztu ezazu berriro eta saioa hasteko galdegingo zaizu zerbitzaria berriro erabilgarri dagoenean.",
+                "unknown": "Itxi da komunikazioa zerbitzariarekin, ez da zergatia ezagutzen. Agian 'yunohost-api' ez da exekutatzen ari?",
+                "reboot": "Zerbitzaria berrabiarazten ari da eta ez da erabilgarri egongo tarte batez.",
+                "shutdown": "Zerbitzari itzaltzen ari da eta aurrerantzean ez da erabilgarri egongo.",
                 "upgrade_system": "Zerbitzariarekin konexioa eten da YunoHost eguneratzen ari delako. Zerbitzaria berriro erabilgarri noiz egongo zain…"
             },
             "session_expired": "Zerbitzaria erabilgarri dago! Baina badirudi saioa iraungi dela. Hasi berriro saioa."
-        }
+        },
+        "busy": "Zerbitzaria lanpetuta dago…",
+        "unknown_request": "Eskaera ezezaguna"
     },
     "api_error": {
         "view_error": "Ikusi errorea",
@@ -111,7 +113,10 @@
             "POST": "sortu/exekutatu",
             "PUT": "moldatu"
         },
-        "is_empty": "Historiarik ez oraingoz."
+        "is_empty": "Historiarik ez oraingoz.",
+        "check_logs": "Joan ekintzaren erregistroaren orrira.",
+        "no_logs": "Ez dago erregistrorik eskuragarri.",
+        "started_by": "{caller}(e)k abiarazi du"
     },
     "common": {
         "lastname": "Abizena",
@@ -446,7 +451,9 @@
         "link": "Esteka",
         "none": "Bat ere ez",
         "separator": ", ",
-        "valid": "Baliozkoa"
+        "valid": "Baliozkoa",
+        "comment": "Iruzkina",
+        "edit": "Editatu"
     },
     "users_import_delete": "Ezabatu zerrendan ageri ez diren erabiltzaileak",
     "system_update": "Sistemaren eguneraketak",
@@ -637,5 +644,7 @@
     "catalog_wishlist": "Badirudi bilatzen ari zaren aplikazioa ez dagoela katalogoan.\n Aplikazioen desira-zerrenda](https://apps.yunohost.org/wishlist?search={search})n proposatu dezakezu edo bere aldeko botoa eman dagoeneko zerrendan badago.",
     "catalog_partial_search": "Saia zaitez irizpideak kentzen, bilatzen ari zaren aplikazioa erabilgarri dagoen ikusteko.",
     "install_app": "Instalatu aplikazioa",
-    "quick_action": "Ekintza azkarrak"
+    "quick_action": "Ekintza azkarrak",
+    "confirm_firewall_close": "Ziur {protocol} protokolorako {port} ataka itxi nahi duzula?",
+    "confirm_firewall_open": "Ziur {protocol} protokolorako {port} ataka ireki nahi duzula?"
 }
