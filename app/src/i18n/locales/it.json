@@ -390,13 +390,15 @@
             "title": "Sto cercando di comunicare con il server…",
             "failed": "Sembra che il server non stia rispondendo. Puoi riprovare a collegarti oppure prova a dare il comando `systemctl restart yunohost-api` da ssh.",
             "reason": {
-                "shutdown": "Il tuo server si sta spegnendo e non è più raggiungibile. Accendilo nuovamente e un prompt di login sarà visualizzato appena il server tornerà raggiungibile.",
-                "unknown": "La connessione al server è stata interrotta per ragioni sconosciute.",
-                "reboot": "Il tuo server si sta riavviando e non sarà raggiungibile per un po'. Il prompt per il login sarà disponibile non appena il server diventerà raggiungibile.",
+                "shutdown": "Il tuo server si sta spegnendo e non è più raggiungibile.",
+                "unknown": "La connessione al server è stata interrotta per ragioni sconosciute. Forse 'yunohost-api' potrebbe essere down?",
+                "reboot": "Il tuo server si sta riavviando e non sarà raggiungibile per un po’.",
                 "upgrade_system": "La connessione al server è stata chiusa per un aggiornamento di YunoHost. Attendi che il server sia nuovamente raggiungibile…"
             },
             "session_expired": "Ora il server è raggiungibile! Sembra però che la tua sessione sia scaduta, accedi di nuovo."
-        }
+        },
+        "busy": "Il server è impegnato…",
+        "unknown_request": "Richiesta sconosciuta"
     },
     "address": {
         "local_part_description": {
