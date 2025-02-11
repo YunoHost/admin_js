@@ -31,7 +31,7 @@
             "title": "Intentando comunicarse co servidor…",
             "failed": "Semella que o servidor non responde. Podes intentar volver conectar ou intenta executar `systemctl restart yunohost-api`por ssh.",
             "reason": {
-                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas. Comproba que 'yunohost-api' está activa.",
+                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas. Miraches se 'yunohost-api' está activa?",
                 "reboot": "O servidor está reiniciando e non estará dispoñible durante este proceso.",
                 "shutdown": "O servidor estase apagando e non está dispoñible.",
                 "upgrade_system": "Pechouse a conexión ao servidor debido á actualización de YunoHost. Agardando a que o servidor sexa accesible…"
