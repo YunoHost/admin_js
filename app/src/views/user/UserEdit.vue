@@ -197,7 +197,7 @@ const onUserEdit = onSubmit(async (onError, serverErrors) => {
     if (key === 'mail_aliases' || key === 'mail_forward') return
     if (key === 'mailbox_quota') {
       if (formData[key] !== mailboxQuota) {
-        data[key] = formData[key]! > 0 ? formData[key] + 'M' : 'No quota'
+        data[key] = formData[key]! > 0 ? formData[key] + 'M' : '0'
       }
     } else if (key === 'change_password') {
       data.change_password = formData[key]
