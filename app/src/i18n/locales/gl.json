@@ -137,7 +137,7 @@
     "confirm_install_custom_app": "AVISO! Ao instalar aplicacións de terceiras partes podes comprometer a integridade e seguridade do teu sistema. Probablemente NON deberías instalalas a non ser que saibas o que fas. Estás preparada para asumir ese risco?",
     "confirm_group_add_access_permission": "Tes a certeza de querer concederlle a {name} acceso a {perm}? Este nivel de acceso aumenta de xeito significativo o risco de ataques se {name} resulta ser unha persoa maliciosa. Deberías facer isto só se CONFÍAS nesta persoa/grupo.",
     "app_state_inprogress_explanation": "As responsables desta app declaran que esta aplicación non está lista para usar en produción. TEN COIDADO!",
-    "permission_show_tile_enabled": "Visible como tesela no portal da usuaria",
+    "permission_show_tile_enabled": "Visible como tesela no portal",
     "app_manage_label_and_tiles": "Xestionar etiqueta e teselas",
     "good_practices_about_admin_password": "Vas definir un novo contrasinal de administración. O contrasinal debe ter polo menos 8 caracteres - aínda que é mellor que teña máis (por exemplo unha frase de paso) e/ou utilices varios tipos de caracteres (maiúsculas, minúsculas, números e caracteres especiais).",
     "go_back": "Volver",
@@ -355,7 +355,7 @@
         "title": "Postinstall",
         "user": {
             "title": "Crea a primeira usuaria administradora",
-            "first_user_help": "Esta usuaria vai ter privilexios de administración e poderá conectarse á interface de administración así como ter acceso directo ao servidor a través de SSH. \nComo é unha usuaria normal, poderá tamén acceder a través do portal de usuaria (SSO) coas súas credenciais. \nUnha vez a instalación esté completada, poderás crear outras usuarias administradoras engadíndoas ao grupo 'admins'."
+            "first_user_help": "Esta usuaria vai ter privilexios de administración e poderá conectarse á interface de administración así como ter acceso directo ao servidor a través de SSH. \nComo é unha usuaria normal, poderá tamén acceder a través do portal (SSO) coas súas credenciais. \nUnha vez a instalación esté completada, poderás crear outras usuarias administradoras engadíndoas ao grupo 'admins'."
         }
     },
     "ports": "Portos",
@@ -430,7 +430,7 @@
     "user_new_forward": "novoreenvio{'@'}omeudominoexterno.org",
     "user_mailbox_use": "Espazo de correo utilizado",
     "user_mailbox_quota": "Cota de correo",
-    "user_interface_link": "Interface de usuaria",
+    "user_interface_link": "Portal",
     "users_import": "Importar usuarias",
     "users_export": "Exportar usuarias",
     "users_import_csv_file": "Ficheiro CSV",
@@ -513,7 +513,7 @@
     "details_about": "Mostrar máis detalles sobre {subject}",
     "group_admins": "Admins",
     "group_explain_admins": "Este é un grupo especial para as usuarias administradoras. As usuarias deste grupo poden acceder á web de administración de YunoHost, conectarse ao servidor por SSH e usar o comando `sudo`. Tamén recibirán os emails enviados a root{'@'}, admin{'@'} e admins{'@'}, por exemplo as notificacións do diagnóstico. Só deberías engadir a persoas nas que confías totalmente!",
-    "label_for_manifestname_help": "Este é o nome mostrado no portal da usuaria. Pódese cambiar despois.",
+    "label_for_manifestname_help": "Este é o nome mostrado no portal. Pódese cambiar despois.",
     "manage_groups": "Xestionar grupos",
     "tools_yunohost_settings": "Axustes YunoHost",
     "wrong_password_or_username": "Credenciais incorrectas",
