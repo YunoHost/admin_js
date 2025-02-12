@@ -43,7 +43,7 @@
         "error_message": "Errore-mezua:",
         "server_said": "Eragiketa exekutatzean zera adierazi du zerbitzariak:",
         "help": "Laguntza eskatu beharko zenuke <a href=\"https://forum.yunohost.org/\">foroan</a> edo <a href=\"https://chat.yunohost.org/\">txat gelan</a> egoera hau konpontzeko, edo errore honen berri eman <a href=\"https://github.com/YunoHost/issues\">bugtracker</a> plataforman.",
-        "info": "Ondorengo informazioa baliagarria izan dakioke laguntza ematen ari zaionari:",
+        "info": "Honako informazioa baliagarria izan dakioke laguntza ematen ari zaionari:",
         "sorry": "Barkatu."
     },
     "api_waiting": "Zerbitzariaren erantzunaren zain…",
@@ -352,14 +352,14 @@
     "migrations_no_pending": "Ez dago egiteko migraziorik",
     "password_confirmation": "Berridatzi pasahitza",
     "logs_history": "Sisteman exekutatutako komandoen historia",
-    "permission_show_tile_enabled": "Erabiltzaileen atarian lauza moduan ikusgai",
+    "permission_show_tile_enabled": "Atarian lauza moduan ikusgai",
     "ports": "Atakak",
     "postinstall": {
-        "force": "Abiarazi instalazio ondorengo prozesua",
-        "title": "Instalazio ondorengo prozesua",
+        "force": "Abiarazi instalatu ondorengo prozesua",
+        "title": "Instalatu ondorengo prozesua",
         "user": {
             "title": "Sortu lehenengo administratzaile erabiltzailea",
-            "first_user_help": "Erabiltzaile honi administrazio-ahalmenak esleituko zaizkio, eta administrazio-gunea eta SSH konexioa erabiltzeko aukera izango du.\nErabiltzaile arrunta denez, erabiltzaileen ataria (SSO) erabiltzeko aukera ere izango du.\nInstalazio ondorengo prozesuek amaitzen dutenean, administratzaile gehiago sor ditzakezu 'admins' taldera gehituz."
+            "first_user_help": "Erabiltzaile honi administrazio-ahalmenak esleituko zaizkio, eta administrazio-gunea eta SSH konexioa erabiltzeko aukera izango du.\nErabiltzaile arrunta denez, ataria (SSO) erabiltzeko aukera ere izango du.\nInstalazio ondorengo prozesuek amaitzen dutenean, administratzaile gehiago sor ditzakezu 'admins' taldera gehituz."
         }
     },
     "postinstall_set_domain": "Aukeratu domeinu nagusia",
@@ -500,7 +500,7 @@
     "yunohost_admin": "YunoHosten administratzailea",
     "skip": "Gerorako utzi",
     "stop": "Geldiarazi",
-    "user_interface_link": "Erabiltzaileen ataria",
+    "user_interface_link": "Ataria",
     "user_username_edit": "Aldatu {name}(r)en kontua",
     "text_selection_is_disabled": "Ezinezkoa da testua hautatzea. Erregistroa partekatu nahi baduzu, erregistro *osoa* partekatu 'Partekatu Yunopastekin' botoiaren bidez.<br/><small>Edo testua hautatu nahi baduzu, sakatu tekla hauek: ↓↓↑↑. </small>",
     "certificate_manage": "Kudeatu SSL ziurtagiria",
@@ -514,7 +514,7 @@
     "details_about": "Erakutsi xehetasun gehiago {subject}(r)i buruz",
     "group_admins": "Administratzaileak",
     "group_explain_admins": "Administratzeko ahalmena duten erabiltzaileen talde berezia da hau. Talde honetan dauden erabiltzaileek YunoHosten web-administrazioa, SSH konexioa eta 'sudo' komandoa erabil dezakete. root{'@'}, admin{'@'} eta admins{'@'} kontuei bidalitako mezu elektronikoak ere jasoko dituzte, diagnostikoen jakinarazpenez gain. Erabat fio zaren erabiltzaileak baino ez zenituzke gehitu beharko talde honetara!",
-    "label_for_manifestname_help": "Erabiltzaileen atarian ageri den izena da hau. Aldatzea dago.",
+    "label_for_manifestname_help": "Atarian ageri den izena da hau. Aldatzea dago.",
     "manage_groups": "Kudeatu taldeak",
     "tools_yunohost_settings": "YunoHosten ezarpenak",
     "wrong_password_or_username": "Pasahitz edo erabiltzaile-izen okerra",
@@ -549,7 +549,7 @@
             "notifs": {
                 "post": {
                     "title": "'{name}' instalatu ondorengo jakinarazpenak",
-                    "alert": "Badirudi instalazioa behar bezala gauzatu dela!\nPaketearen arduradunak ondorengo jakinarazpenak garrantzitsuak direla deritzo.\nAplikazioaren informazio-orrialdean irakur dezakezu berriro."
+                    "alert": "Badirudi instalazioa behar bezala gauzatu dela!\nPaketearen arduradunak honako jakinarazpenak garrantzitsuak direla deritzo.\nAplikazioaren informazio-orrialdean irakur dezakezu berriro."
                 },
                 "pre": {
                     "warning": "Instalatu baino lehen jakin beharrekoak",
@@ -611,10 +611,10 @@
             "notifs": {
                 "pre": {
                     "title": "Kontuz!",
-                    "alert": "Ondorengo oharrak aztertu beharko zenituzke bertsio-berritu baino lehen, litekeena da jakin beharreko zerbait azaltzea."
+                    "alert": "Honako oharrak aztertu beharko zenituzke bertsio-berritu baino lehen, litekeena da jakin beharreko zerbait azaltzea."
                 },
                 "post": {
-                    "alert": "Badirudi bertsio-berritzea behar bezala joan dela! \n Paketearen arduradunak bertsio-berritze honi buruzko ondorengo jakinarazpenak garrantzitsuak direla deritzo. \nAplikazioaren informazio-orrialdean irakur dezakezu berriro.",
+                    "alert": "Badirudi bertsio-berritzea behar bezala joan dela! \n Paketearen arduradunak bertsio-berritze honi buruzko honako jakinarazpenak garrantzitsuak direla deritzo. \nAplikazioaren informazio-orrialdean irakur dezakezu berriro.",
                     "title": "'{name}' bertsio-berritu ondorengo jakinarazpenak"
                 }
             },
