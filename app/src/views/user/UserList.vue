@@ -25,10 +25,6 @@ function downloadExport() {
 <template>
   <ViewSearch v-model="search" :items="filteredUsers" items-name="users">
     <template #top-bar-buttons>
-      <BButton variant="info" :to="{ name: 'group-list' }">
-        <YIcon iname="key-modern" /> {{ $t('groups_and_permissions_manage') }}
-      </BButton>
-
       <BDropdown
         :split-to="{ name: 'user-create' }"
         split

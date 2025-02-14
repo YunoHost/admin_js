@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const menu = [
   { routeName: 'user-list', icon: 'users', translation: 'users' },
+  {
+    routeName: 'group-list',
+    icon: 'key-modern',
+    translation: 'groups_and_permissions',
+  },
   { routeName: 'domain-list', icon: 'globe', translation: 'domains' },
   { routeName: 'app-list', icon: 'cubes', translation: 'applications' },
   { routeName: 'update', icon: 'refresh', translation: 'system_update' },
