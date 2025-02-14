@@ -34,10 +34,10 @@ const { protocols, upnpEnabled } = await api
 
 const upnpError = ref('')
 const tableFields = [
-  { key: 'port', label: t('port') },
-  { key: 'open', label: t('open') },
-  { key: 'upnp', label: t('upnp') },
-  { key: 'comment', label: t('words.comment') },
+  { key: 'port', label: t('port'), thClass: 'col-2' },
+  { key: 'open', label: t('open'), thClass: 'col-2' },
+  { key: 'upnp', label: t('upnp'), thClass: 'col-2' },
+  { key: 'comment', label: t('words.comment'), thClass: 'col-6' },
 ]
 
 type Form = {
@@ -198,10 +198,10 @@ function onCommentEdit(protocol: Form['protocol'], index: number) {
 
 function getFieldClass(field: TableField) {
   const classes = {
-    port: 'col-1 pe-3',
-    open: 'col-1',
-    upnp: 'col-1',
-    comment: 'd-flex',
+    port: 'col-2 pe-2',
+    open: 'col-2',
+    upnp: 'col-2',
+    comment: 'col-6',
   } as Record<typeof field.key, string>
   field.class = classes[field.key]
 }
@@ -220,6 +220,7 @@ function getFieldClass(field: TableField) {
           small
           striped
           responsive
+          table-class="table-fixed"
           :field-column-class="getFieldClass"
         >
           <!-- PORT CELL -->
@@ -250,14 +251,18 @@ function getFieldClass(field: TableField) {
           </template>
 
           <template #cell(comment)="data">
-            {{ data.value }}
-            <BButton
-              size="xs"
-              class="ms-auto me-2"
-              @click="onCommentEdit(protocol, data.index)"
+            <div 
+              class="d-flex w-100"
             >
-              {{ $t('words.edit') }}
-            </BButton>
+              {{ data.value }}
+              <BButton
+                size="xs"
+                class="ms-auto me-md-2"
+                @click="onCommentEdit(protocol, data.index)"
+              >
+                {{ $t('words.edit') }}
+              </BButton>
+            </div>
           </template>
         </BTableLite>
       </div>
@@ -299,6 +304,10 @@ function getFieldClass(field: TableField) {
 
 <style lang="scss" scoped>
 :deep() {
+  .table-fixed {
+    table-layout: fixed;
+  }
+
   .table .form-switch {
     .form-check-input {
       &:checked {

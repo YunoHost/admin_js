@@ -70,6 +70,7 @@ declare module 'vue' {
     BSkeletonWrapper: typeof import('./src/components/globals/skeletons/BSkeletonWrapper.vue')['default']
     BTab: typeof import('bootstrap-vue-next/components/BTabs')['BTab']
     BTable: typeof import('bootstrap-vue-next/components/BTable')['BTable']
+    BTableLite: typeof import('bootstrap-vue-next/components/BTable')['BTableLite']
     BTabs: typeof import('bootstrap-vue-next/components/BTabs')['BTabs']
     BToast: typeof import('bootstrap-vue-next/components/BToast')['BToast']
     BToastOrchestrator: typeof import('bootstrap-vue-next/components/BToast')['BToastOrchestrator']
