@@ -418,7 +418,7 @@
             },
             "session_expired": "Le serveur est désormais accessible ! Mais il semble que votre session ait expiré, veuillez vous connecter."
         },
-        "busy": "Le serveur est occupé …",
+        "busy": "Le serveur est occupé…",
         "unknown_request": "Demande inconnue"
     },
     "go_back": "Revenir",
