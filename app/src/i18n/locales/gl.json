@@ -31,13 +31,15 @@
             "title": "Intentando comunicarse co servidor…",
             "failed": "Semella que o servidor non responde. Podes intentar volver conectar ou intenta executar `systemctl restart yunohost-api`por ssh.",
             "reason": {
-                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas.",
-                "reboot": "O servidor está reiniciando e non estará dispoñible por uns minutos. O formulario de conexión estará dispoñible tan pronto o servidor sexa accesible.",
-                "shutdown": "O servidor estase apagando e non está dispoñible. Acéndeo e o formulario de conexión estará dispoñible tan pronto o servidor sexa accesible.",
+                "unknown": "Pechouse a conexión co servidor por razóns descoñecidas. Miraches se 'yunohost-api' está activa?",
+                "reboot": "O servidor está reiniciando e non estará dispoñible durante este proceso.",
+                "shutdown": "O servidor estase apagando e non está dispoñible.",
                 "upgrade_system": "Pechouse a conexión ao servidor debido á actualización de YunoHost. Agardando a que o servidor sexa accesible…"
             },
             "session_expired": "O servidor xa é accesible! Pero semella que caducou a túa sesión, volve a acceder."
-        }
+        },
+        "busy": "O servidor está ocupado…",
+        "unknown_request": "Solicitude descoñecida"
     },
     "all": "Todo",
     "administration_password": "Contrasinal de administración",
@@ -53,8 +55,6 @@
     },
     "add": "Engadir",
     "action": "Acción",
-    "confirm_firewall_disallow": "Tes a certeza de querer pechar o porto {port}? (protocolo: {protocol}, conexión: {connection})",
-    "confirm_firewall_allow": "Tes a certeza de querer abrir o porto {port}? (protocolo: {protocol}, conexión: {connection})",
     "confirm_delete": "Tes a certeza de querer eliminar {name}?",
     "confirm_change_maindomain": "Tes a certeza de querer cambiar o dominio principal?",
     "confirm_app_default": "Tes a certeza de querer establecer esta como a app por defecto?",
@@ -137,7 +137,7 @@
     "confirm_install_custom_app": "AVISO! Ao instalar aplicacións de terceiras partes podes comprometer a integridade e seguridade do teu sistema. Probablemente NON deberías instalalas a non ser que saibas o que fas. Estás preparada para asumir ese risco?",
     "confirm_group_add_access_permission": "Tes a certeza de querer concederlle a {name} acceso a {perm}? Este nivel de acceso aumenta de xeito significativo o risco de ataques se {name} resulta ser unha persoa maliciosa. Deberías facer isto só se CONFÍAS nesta persoa/grupo.",
     "app_state_inprogress_explanation": "As responsables desta app declaran que esta aplicación non está lista para usar en produción. TEN COIDADO!",
-    "permission_show_tile_enabled": "Visible como tesela no portal da usuaria",
+    "permission_show_tile_enabled": "Visible como tesela no portal",
     "app_manage_label_and_tiles": "Xestionar etiqueta e teselas",
     "good_practices_about_admin_password": "Vas definir un novo contrasinal de administración. O contrasinal debe ter polo menos 8 caracteres - aínda que é mellor que teña máis (por exemplo unha frase de paso) e/ou utilices varios tipos de caracteres (maiúsculas, minúsculas, números e caracteres especiais).",
     "go_back": "Volver",
@@ -234,7 +234,10 @@
         },
         "last_action": "Última acción:",
         "title": "Historial",
-        "is_empty": "Por agora non hai nada no historial."
+        "is_empty": "Por agora non hai nada no historial.",
+        "check_logs": "Ir á páxina do rexistro da operación.",
+        "no_logs": "Sen rexistros dispoñibles.",
+        "started_by": "comezada por {caller}"
     },
     "permissions": "Permisos",
     "groups_and_permissions_manage": "Xestionar grupos e permisos",
@@ -336,86 +339,6 @@
     "save": "Gardar",
     "running": "Executando",
     "run": "Executar",
-    "human_routes": {
-        "users": {
-            "update": "Actualizar usuaria '{name}'",
-            "delete": "Eliminar usuaria '{name}'",
-            "create": "Crear usuaria '{name}'"
-        },
-        "upgrade": {
-            "app": "Actualizar a app '{app}'",
-            "apps": "Actualizar tódalas apps",
-            "system": "Actualizar o sistema"
-        },
-        "update": "Comprobar actualizacións",
-        "shutdown": "Apagar o servidor",
-        "share_logs": "Crear ligazón para o rexistro '{name}'",
-        "services": {
-            "stop": "Deter o servizo '{name}'",
-            "start": "Iniciar o servizo '{name}'",
-            "restart": "Reiniciar o servizo '{name}'"
-        },
-        "reboot": "Reiniciar o servidor",
-        "postinstall": "Executar a post-instalación",
-        "permissions": {
-            "remove": "Retirarlle a '{name}' o acceso a '{perm}'",
-            "add": "Permitirlle a '{name}' acceso a '{perm}'"
-        },
-        "migrations": {
-            "skip": "Omitir migracións",
-            "run": "Realizar migracións"
-        },
-        "groups": {
-            "remove": "Retirar a '{user}' do grupo '{name}'",
-            "add": "Engadir '{user}' ao grupo '{name}'",
-            "delete": "Eliminar grupo '{name}'",
-            "create": "Crear grupo '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} porto {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "Establecer '{name}' como dominio por defecto",
-            "delete": "Eliminar dominio '{name}'",
-            "add": "Engadir dominio '{name}'",
-            "push_dns_changes": "Subir rexistros DNS á rexistradora para '{name}'",
-            "update_config": "Actualizar panel '{id}' da configuración de '{name}'",
-            "cert_install": "Instalar certificado para '{name}'",
-            "cert_renew": "Anovar certificado para '{name}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Non ignorar aviso",
-                "error": "Non ignorar erro"
-            },
-            "run_specific": "Realizar diagnóstico '{description}'",
-            "run": "Realizar diagnóstico",
-            "ignore": {
-                "warning": "Ignorar un aviso",
-                "error": "Ignorar un erro"
-            }
-        },
-        "backups": {
-            "restore": "Restaurar copia de apoio '{name}'",
-            "delete": "Eliminar copia de apoio '{name}'",
-            "create": "Crear copia de apoio"
-        },
-        "apps": {
-            "update_config": "Actualizar panel '{id}' da configuración da app '{name}'",
-            "uninstall": "Desinstalar app '{name}'",
-            "set_default": "Redirixir raiz do dominio '{domain}' a '{name}'",
-            "install": "Intalar app '{name}'",
-            "change_url": "Cambiar URL de acceso a '{name}'",
-            "change_label": "Cambiar etiqueta de '{prevName}' a '{nextName}'",
-            "action_config": "Executar a acción '{action}' da configuración da app '{name}'",
-            "dismiss_notification": "Desbotar a notificación de '{name}'"
-        },
-        "reconnecting": "Reconectando",
-        "settings": {
-            "update": "Actualizar axustes xerais '{panel}'"
-        }
-    },
     "restart": "Reiniciar",
     "restore": "Restaurar",
     "rerun_diagnosis": "Volver a executar diagnóstico",
@@ -432,7 +355,7 @@
         "title": "Postinstall",
         "user": {
             "title": "Crea a primeira usuaria administradora",
-            "first_user_help": "Esta usuaria vai ter privilexios de administración e poderá conectarse á interface de administración así como ter acceso directo ao servidor a través de SSH. \nComo é unha usuaria normal, poderá tamén acceder a través do portal de usuaria (SSO) coas súas credenciais. \nUnha vez a instalación esté completada, poderás crear outras usuarias administradoras engadíndoas ao grupo 'admins'."
+            "first_user_help": "Esta usuaria vai ter privilexios de administración e poderá conectarse á interface de administración así como ter acceso directo ao servidor a través de SSH. \nComo é unha usuaria normal, poderá tamén acceder a través do portal (SSO) coas súas credenciais. \nUnha vez a instalación esté completada, poderás crear outras usuarias administradoras engadíndoas ao grupo 'admins'."
         }
     },
     "ports": "Portos",
@@ -493,7 +416,9 @@
         "link": "Ligazón",
         "none": "Ningún",
         "separator": ", ",
-        "valid": "Válido"
+        "valid": "Válido",
+        "comment": "Comentar",
+        "edit": "Editar"
     },
     "warnings": "{count} avisos",
     "version": "Versión",
@@ -505,7 +430,7 @@
     "user_new_forward": "novoreenvio{'@'}omeudominoexterno.org",
     "user_mailbox_use": "Espazo de correo utilizado",
     "user_mailbox_quota": "Cota de correo",
-    "user_interface_link": "Interface de usuaria",
+    "user_interface_link": "Portal",
     "users_import": "Importar usuarias",
     "users_export": "Exportar usuarias",
     "users_import_csv_file": "Ficheiro CSV",
@@ -588,7 +513,7 @@
     "details_about": "Mostrar máis detalles sobre {subject}",
     "group_admins": "Admins",
     "group_explain_admins": "Este é un grupo especial para as usuarias administradoras. As usuarias deste grupo poden acceder á web de administración de YunoHost, conectarse ao servidor por SSH e usar o comando `sudo`. Tamén recibirán os emails enviados a root{'@'}, admin{'@'} e admins{'@'}, por exemplo as notificacións do diagnóstico. Só deberías engadir a persoas nas que confías totalmente!",
-    "label_for_manifestname_help": "Este é o nome mostrado no portal da usuaria. Pódese cambiar despois.",
+    "label_for_manifestname_help": "Este é o nome mostrado no portal. Pódese cambiar despois.",
     "manage_groups": "Xestionar grupos",
     "tools_yunohost_settings": "Axustes YunoHost",
     "wrong_password_or_username": "Credenciais incorrectas",
@@ -719,5 +644,7 @@
     "catalog_partial_search": "Intenta eliminar todos os criterios de filtro para ver se así aparece na busca.",
     "loading": "Cargando",
     "quick_action": "Acción rápida",
-    "install_app": "Instalar unha app"
+    "install_app": "Instalar unha app",
+    "confirm_firewall_open": "Tes certeza de querer abrir o porto {port} para o protocolo {protocol}?",
+    "confirm_firewall_close": "Tes certeza de querer pechar o porto {port} para o protocolo {protocol}?"
 }

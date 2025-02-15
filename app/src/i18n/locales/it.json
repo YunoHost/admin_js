@@ -136,8 +136,6 @@
     "app_info_changeurl_desc": "Cambia l'URL di accesso di questa applicazione (dominio e/o percorso).",
     "app_info_change_url_disabled_tooltip": "Questa funzionalità non è ancora stata implementata in questa applicazione",
     "confirm_app_change_url": "Sei sicuro di voler cambiare l'URL di accesso all'applicazione ?",
-    "confirm_firewall_allow": "Sei sicuro di voler aprire la porta {port}? (protocollo: {protocol}, connessione: {connection})",
-    "confirm_firewall_disallow": "Sei sicuro di voler chiudere la porta {port}? (protocollo: {protocol}, connessione: {connection})",
     "confirm_migrations_skip": "Saltare le migrazioni è sconsigliato. Sei sicuro di volerlo fare?",
     "confirm_service_start": "Sei sicuro di voler eseguire {name}?",
     "confirm_service_stop": "Sei sicuro di voler fermare {name}?",
@@ -392,13 +390,15 @@
             "title": "Sto cercando di comunicare con il server…",
             "failed": "Sembra che il server non stia rispondendo. Puoi riprovare a collegarti oppure prova a dare il comando `systemctl restart yunohost-api` da ssh.",
             "reason": {
-                "shutdown": "Il tuo server si sta spegnendo e non è più raggiungibile. Accendilo nuovamente e un prompt di login sarà visualizzato appena il server tornerà raggiungibile.",
-                "unknown": "La connessione al server è stata interrotta per ragioni sconosciute.",
-                "reboot": "Il tuo server si sta riavviando e non sarà raggiungibile per un po'. Il prompt per il login sarà disponibile non appena il server diventerà raggiungibile.",
+                "shutdown": "Il tuo server si sta spegnendo e non è più raggiungibile.",
+                "unknown": "La connessione al server è stata interrotta per ragioni sconosciute. Forse 'yunohost-api' potrebbe essere down?",
+                "reboot": "Il tuo server si sta riavviando e non sarà raggiungibile per un po’.",
                 "upgrade_system": "La connessione al server è stata chiusa per un aggiornamento di YunoHost. Attendi che il server sia nuovamente raggiungibile…"
             },
             "session_expired": "Ora il server è raggiungibile! Sembra però che la tua sessione sia scaduta, accedi di nuovo."
-        }
+        },
+        "busy": "Il server è impegnato…",
+        "unknown_request": "Richiesta sconosciuta"
     },
     "address": {
         "local_part_description": {
@@ -411,86 +411,6 @@
         }
     },
     "cancel": "Annulla",
-    "human_routes": {
-        "users": {
-            "update": "Aggiorna utente '{name}'",
-            "delete": "Elimina utente '{name}'",
-            "create": "Crea utente '{name}'"
-        },
-        "upgrade": {
-            "app": "Aggiorna l'app '{app}'",
-            "apps": "Aggiorna tutte le app",
-            "system": "Aggiorna il sistema"
-        },
-        "update": "Controlla aggiornamenti",
-        "shutdown": "Spegni il server",
-        "share_logs": "Genera link per il log '{name}'",
-        "services": {
-            "stop": "Ferma il servizio '{name}'",
-            "start": "Avvio il servizio '{name}'",
-            "restart": "Riavvia il servizio '{name}'"
-        },
-        "reboot": "Riavvia il server",
-        "postinstall": "Esegui il post-install",
-        "permissions": {
-            "remove": "Rimuovi l'accesso per '{perm}' a '{name}'",
-            "add": "Permetti a '{name}' di accedere a '{perm}'"
-        },
-        "migrations": {
-            "skip": "Salta migrazioni",
-            "run": "Esegui migrazioni"
-        },
-        "groups": {
-            "remove": "Rimuovi '{user}' dal gruppo '{name}'",
-            "add": "Aggiungi '{user}' al gruppo '{name}'",
-            "delete": "Elimina gruppo '{name}'",
-            "create": "Crea gruppo '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} porta {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "Imposta '{name}' come dominio di default",
-            "delete": "Elimina dominio '{name}'",
-            "add": "Aggiungi dominio '{name}'",
-            "push_dns_changes": "Sincronizza i record DNS al registrar per '{name}'",
-            "update_config": "Aggiorna il pannello ‘{id}’ della configurazione del dominio ‘{name}’",
-            "cert_renew": "Rinnova il certificato per ‘{name}’",
-            "cert_install": "Installa il certificato per ‘{name}’"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Non ignorare avviso",
-                "error": "Non ignorare errore"
-            },
-            "run_specific": "Esegui diagnosi '{description}'",
-            "run": "Esegui diagnosi",
-            "ignore": {
-                "warning": "Ignora avviso",
-                "error": "Ignora errore"
-            }
-        },
-        "backups": {
-            "restore": "Ripristina backup '{name}'",
-            "delete": "Elimina backup '{name}'",
-            "create": "Crea backup"
-        },
-        "apps": {
-            "update_config": "Aggiorna il pannello ‘{id}’ della configurazione dell’app ‘{name}’",
-            "uninstall": "Disinstalla l'app '{name}'",
-            "set_default": "Reindirizza la domain root di '{domain}' a '{name}'",
-            "install": "Installa l'app '{name}'",
-            "change_url": "Cambia l'URL d'accesso di '{name}'",
-            "change_label": "Cambia label da '{prevName}' a '{nextName}'",
-            "dismiss_notification": "Nascondi la notifica per ‘{name}’",
-            "action_config": "Esegui l’azione ‘{action}’ della configurazione dell’app ‘{name}’"
-        },
-        "reconnecting": "Riconnessione",
-        "settings": {
-            "update": "Aggiorna le impostazioni globali di ‘{panel}’"
-        }
-    },
     "postinstall": {
         "force": "Forza il post-install",
         "title": "Post-installazione",

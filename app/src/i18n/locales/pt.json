@@ -117,8 +117,6 @@
     "backup_new": "Nova cópia de segurança",
     "check": "Verificação",
     "confirm_app_change_url": "Tem certeza que quer mudar o endereço URL para acessar esta aplicação?",
-    "confirm_firewall_allow": "Tem certeza que quer abrir a porta {port}? (protocolo: {protocol}, conexão: {connection})",
-    "confirm_firewall_disallow": "Tem certeza que quer fechar a porta {port}? (protocolo: {protocol}, conexão: {connection})",
     "confirm_install_custom_app": "CUIDADO! Instalar aplicações de terceiros pode comprometer a integridade e a segurança do seu sistema. Provavelmente NÃO deveria instalar esta aplicação se não tiver certeza do que está fazendo. Quer correr esses riscos?",
     "confirm_install_domain_root": "Não será mas capaz de instalar outras aplicações em {domain}. Quer continuar?",
     "confirm_install_app_lowquality": "Aviso: esta aplicação pode funcionar mais não está bem integrada em Yunohost. Algumas funcionalidades como logon único e/ou cópia de segurança/restauro pode não ser disponível.",
@@ -348,76 +346,6 @@
         "for": "Procurar por {items}…"
     },
     "run": "Executar",
-    "human_routes": {
-        "users": {
-            "update": "Atualizar o usuário '{name}'",
-            "delete": "Deletar usuário '{name}'",
-            "create": "Criar usuário '{name}'"
-        },
-        "upgrade": {
-            "app": "Atualizar o app '{app}'",
-            "apps": "Atualizar todos os apps",
-            "system": "Atualizar o sistema"
-        },
-        "update": "Checar por atualizações",
-        "shutdown": "Desligar o servidor",
-        "share_logs": "Gerar link para o log '{name}'",
-        "services": {
-            "stop": "Parar o serviço '{name}'",
-            "start": "Iniciar o serviço '{name}'",
-            "restart": "Reiniciar o serviço '{name}'"
-        },
-        "reboot": "Reiniciar o servidor",
-        "postinstall": "Executar o post-install",
-        "permissions": {
-            "remove": "Remover acesso a '{perm}' de '{name}'",
-            "add": "Permitir '{name}'acessar '{perm}'"
-        },
-        "migrations": {
-            "skip": "Pular migrações",
-            "run": "Executar migrações"
-        },
-        "groups": {
-            "remove": "Remover '{user}' do grupo '{name}'",
-            "add": "Adicionar '{user}' ao grupo '{name}'",
-            "delete": "Remover grupo '{name}'",
-            "create": "Criar grupo '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} porta {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "Escolher '{name}' como domínio padrão",
-            "delete": "Remover domínio '{name}'",
-            "add": "Adicionar domínio '{name}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Não ignorar aviso",
-                "error": "Não ignorar erro"
-            },
-            "run_specific": "Executar diagnóstico '{description}'",
-            "run": "Executar diagnóstico",
-            "ignore": {
-                "warning": "Ignorar aviso",
-                "error": "Ignorar erro"
-            }
-        },
-        "backups": {
-            "restore": "Restaurar backup '{name}'",
-            "delete": "Deletar backup '{name}'",
-            "create": "Criar um backup"
-        },
-        "apps": {
-            "update_config": "Atualizar a configuração do app '{name}'",
-            "uninstall": "Desinstalar o app '{name}'",
-            "set_default": "Redirecionar domínio root de '{domain}' para '{name}'",
-            "install": "Instalar o app '{name}'",
-            "change_url": "Mudar URL de acesso de '{name}'",
-            "change_label": "Mudar label de '{prevName}' para '{nextName}'"
-        }
-    },
     "restart": "Reiniciar",
     "rerun_diagnosis": "Reexecutar o diagnóstico",
     "readme": "Leia-me",

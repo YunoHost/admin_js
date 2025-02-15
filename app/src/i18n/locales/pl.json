@@ -27,8 +27,6 @@
     "logout": "Wyloguj",
     "ok": "OK",
     "confirm_app_install": "Czy na pewno chcesz zainstalować tę aplikację?",
-    "confirm_firewall_disallow": "Czy na pewno chcesz zamknąć port {port} (protocol:{protocol}, connection: {connection})",
-    "confirm_firewall_allow": "Czy na pewno chcesz otworzyć port {port} (protocol:{protocol}, connection: {connection})",
     "confirm_delete": "Czy na pewno chcesz usunąć {name}?",
     "confirm_change_maindomain": "Czy na pewno chcesz zmienić domenę podstawową?",
     "confirm_app_default": "Czy na pewno chcesz ustawić tę aplikację jako domyślną?",
@@ -385,86 +383,6 @@
         }
     },
     "restore": "Przywróć",
-    "human_routes": {
-        "apps": {
-            "set_default": "Przekieruj '{domain}' źródło domeny do '{name}'",
-            "update_config": "Aktualizuj konfigurację panelu '{id}' aplikacji '{name}'",
-            "change_label": "Zmień etykietę '{prevName}' na '{nextName}'",
-            "change_url": "Zmień adres URL dla '{name}'",
-            "install": "Instaluj '{name}'",
-            "uninstall": "Usuń '{name}'",
-            "action_config": "Uruchom akcję '{action}' w konfiguracji aplikacji '{name}'",
-            "dismiss_notification": "Odrzuć powiadomienie dla '{name}'"
-        },
-        "backups": {
-            "create": "Utwórz kopię zapasową",
-            "restore": "Przywróć kopię zapasową '{name}'",
-            "delete": "Usuń kopię zapasową '{name}'"
-        },
-        "diagnosis": {
-            "ignore": {
-                "error": "Ignoruj błąd",
-                "warning": "Ignoruj ostrzeżenie"
-            },
-            "run": "Uruchom diagnostykę",
-            "unignore": {
-                "error": "Cofnij ignorowanie błędu",
-                "warning": "Cofnij ignorowanie ostrzeżenia"
-            },
-            "run_specific": "Uruchom diagnostykę '{description}'"
-        },
-        "migrations": {
-            "run": "Uruchom migracje",
-            "skip": "Pomiń migracje"
-        },
-        "permissions": {
-            "remove": "Usuń '{name}' z dostępu do '{perm}'",
-            "add": "Pozwól '{name}' na dostęp do '{perm}'"
-        },
-        "postinstall": "Uruchom post-instalację",
-        "services": {
-            "start": "Uruchom usługę '{name}'",
-            "stop": "Zatrzymaj usługę '{name}'",
-            "restart": "Uruchom usługę '{name}' ponownie"
-        },
-        "upgrade": {
-            "apps": "Aktualizuj wszystkie programy",
-            "app": "Aktualizuj '{app}'",
-            "system": "Aktualizuj system"
-        },
-        "shutdown": "Wyłącz serwer",
-        "share_logs": "Generuj link dla logu '{name}'",
-        "reboot": "Uruchom serwer ponownie",
-        "domains": {
-            "set_default": "Ustaw '{name}' jako główną domenę",
-            "add": "Dodaj domenę '{name}'",
-            "delete": "Usuń domenę '{name}'",
-            "push_dns_changes": "Przekaż wpisy DNS dla '{name}' do dostawcy",
-            "update_config": "Aktualizuj konfigurację panelu '{id}' w domenie '{name}'",
-            "cert_install": "Zainstaluj certyfikat dla „{name}”",
-            "cert_renew": "Odnów certyfikat dla „{name}”"
-        },
-        "firewall": {
-            "ports": "{action} port {port} ({protocol}, {connection})",
-            "upnp": "{action} UPnP"
-        },
-        "groups": {
-            "create": "Utwórz grupę '{name}'",
-            "delete": "Usuń grupę '{name}'",
-            "add": "Dodaj '{user}' do grupy '{name}'",
-            "remove": "Usuń '{user}' z grupy '{name}'"
-        },
-        "users": {
-            "create": "Utwórz użytkownika '{name}'",
-            "delete": "Usuń użytkownika '{name}'",
-            "update": "Aktualizuj użytkownika '{name}'"
-        },
-        "update": "Sprawdź aktualizacje",
-        "reconnecting": "Ponawianie połączenia",
-        "settings": {
-            "update": "Uaktualnij ustawienia globalne dla „{panel}”"
-        }
-    },
     "size": "Rozmiar",
     "run": "Uruchom",
     "restart": "Uruchom ponownie",

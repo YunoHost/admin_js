@@ -142,8 +142,6 @@
     "certificate_manage": "Gérer les certificats SSL",
     "certificate": "Certificat",
     "user_mailbox_use": "Espace utilisé de la boite aux lettres",
-    "confirm_firewall_allow": "Voulez-vous vraiment ouvrir le port {port} ? (protocole : {protocol}, connexion : {connection})",
-    "confirm_firewall_disallow": "Voulez-vous vraiment fermer le port {port} ? (protocole : {protocol}, connexion : {connection})",
     "confirm_service_start": "Voulez-vous vraiment démarrer {name} ?",
     "confirm_service_stop": "Voulez-vous vraiment arrêter {name} ?",
     "confirm_update_apps": "Voulez-vous vraiment mettre à jour toutes les applications ?",
@@ -238,7 +236,9 @@
         "link": "Lien",
         "none": "Aucun",
         "separator": ", ",
-        "valid": "Valide"
+        "valid": "Valide",
+        "comment": "Commentaire",
+        "edit": "Modifier"
     },
     "configuration": "Configuration",
     "since": "depuis",
@@ -319,7 +319,10 @@
         },
         "last_action": "Dernière action :",
         "title": "Historique",
-        "is_empty": "Rien dans l'historique pour le moment."
+        "is_empty": "Rien dans l'historique pour le moment.",
+        "check_logs": "Aller à la page du journal de l'opération.",
+        "no_logs": "Pas de journaux (logs) disponibles.",
+        "started_by": "démarré par {caller}"
     },
     "form_errors": {
         "required": "Ce champ est obligatoire.",
@@ -408,13 +411,15 @@
             "title": "Tentative de communication avec le serveur…",
             "failed": "Le serveur ne répond pas. Vous pouvez essayer de vous reconnecter ou essayer d'exécuter `systemctl restart yunohost-api` via SSH.",
             "reason": {
-                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues.",
-                "reboot": "Votre serveur redémarre et ne sera pas joignable pendant un certain temps. Une invite de connexion sera disponible dès que le serveur sera accessible.",
-                "shutdown": "Votre serveur est en cours d'extinction et n'est plus joignable. Redémarrez-le et une invitation de connexion sera disponible dès que le serveur sera joignable.",
+                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues. Peut-être que 'yunohost-api' ne répond plus ?",
+                "reboot": "Votre serveur redémarre et ne sera pas joignable pendant un certain temps.",
+                "shutdown": "Votre serveur est en train de s'arrêter et n'est plus joignable.",
                 "upgrade_system": "La connexion avec le serveur a été fermée en raison de la mise à jour de YunoHost. Il vous faut patienter jusqu'à ce que le serveur soit à nouveau joignable…"
             },
             "session_expired": "Le serveur est désormais accessible ! Mais il semble que votre session ait expiré, veuillez vous connecter."
-        }
+        },
+        "busy": "Le serveur est occupé…",
+        "unknown_request": "Demande inconnue"
     },
     "go_back": "Revenir",
     "postinstall": {
@@ -423,86 +428,6 @@
         "user": {
             "title": "Création du premier compte d'administration",
             "first_user_help": "Ce compte se verra accorder des privilèges d'administration et sera autorisé à se connecter à cette interface d'administration ainsi que directement au serveur via SSH.\nComme il s'agit d'un compte normal, il pourra également se connecter au portail YunoHost (SSO) avec ses informations d'identification.\nUne fois la post-installation terminée, vous pourrez créer d'autres comptes d'administration en les ajoutant au groupe 'admins'."
-        }
-    },
-    "human_routes": {
-        "users": {
-            "update": "Mettre à jour le compte '{name}'",
-            "delete": "Supprimer le compte '{name}'",
-            "create": "Créer le compte '{name}'"
-        },
-        "upgrade": {
-            "app": "Mettre à jour l'application '{app}'",
-            "apps": "Mettre à jour toutes les applications",
-            "system": "Mettre à jour le système"
-        },
-        "update": "Rechercher les mises à jour",
-        "shutdown": "Arrêter le serveur",
-        "share_logs": "Générer le lien pour le journal '{name}'",
-        "services": {
-            "stop": "Arrêter le service '{name}'",
-            "start": "Démarrer le service '{name}'",
-            "restart": "Redémarrer le service '{name}'"
-        },
-        "reboot": "Redémarrer le serveur",
-        "postinstall": "Exécuter la post-installation",
-        "permissions": {
-            "remove": "Supprimer l'accès '{name}' à '{perm}'",
-            "add": "Autoriser '{name}' à accéder à '{perm}'"
-        },
-        "migrations": {
-            "skip": "Ignorer les migrations",
-            "run": "Exécuter les migrations"
-        },
-        "groups": {
-            "remove": "Supprimer '{user}' du groupe '{name}'",
-            "add": "Ajouter '{user}' au groupe '{name}'",
-            "delete": "Supprimer le groupe '{name}'",
-            "create": "Créer le groupe '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} port {port} ({protocol}, {connection})"
-        },
-        "domains": {
-            "set_default": "Définir '{name}' comme domaine par défaut",
-            "delete": "Supprimer le domaine '{name}'",
-            "add": "Ajouter le domaine '{name}'",
-            "update_config": "Mise à jour du panneau '{id}' de configuration du domaine '{name}'",
-            "push_dns_changes": "Envoyer les enregistrements DNS au registraire pour '{name}'",
-            "cert_install": "Installation d'un certificat pour '{name}'",
-            "cert_renew": "Renouvellement du certificat pour '{name}'"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Ne pas ignorer un avertissement",
-                "error": "Ne pas ignorer une erreur"
-            },
-            "run_specific": "Lancer le diagnostic '{description}'",
-            "run": "Exécuter le diagnostic",
-            "ignore": {
-                "warning": "Ignorer un avertissement",
-                "error": "Ignorer une erreur"
-            }
-        },
-        "backups": {
-            "restore": "Restaurer la sauvegarde '{name}'",
-            "delete": "Supprimer la sauvegarde '{name}'",
-            "create": "Créer une sauvegarde"
-        },
-        "apps": {
-            "update_config": "Mise à jour du panneau '{id}' de configuration de l'application '{name}'",
-            "uninstall": "Désinstaller l'application '{name}'",
-            "set_default": "Rediriger la racine du domaine '{domain}' vers '{name}'",
-            "install": "Installer l'application '{name}'",
-            "change_url": "Modifier l'URL d'accès de '{name}'",
-            "change_label": "Changer le libellé de '{prevName}' par '{nextName}'",
-            "action_config": "Exécuter l'action '{action}' de configuration de l'application '{name}'",
-            "dismiss_notification": "Congédier la notification pour '{name}'"
-        },
-        "reconnecting": "Reconnexion",
-        "settings": {
-            "update": "Mise à jour des paramètres globaux de '{panel}'"
         }
     },
     "items_verbose_items_left": "Il reste des {items}. | Il reste un {items}. | Il reste des {items}.",
@@ -719,5 +644,7 @@
         "select_one": "Veuillez sélectionner une option"
     },
     "loading": "Chargement",
-    "quick_action": "Ajout rapide"
+    "quick_action": "Ajout rapide",
+    "confirm_firewall_close": "Êtes-vous sûr de vouloir fermer le port {port} pour le protocole {protocol} ?",
+    "confirm_firewall_open": "Êtes-vous sûr de vouloir ouvrir le port {port} pour le protocole {protocol} ?"
 }

@@ -28,20 +28,22 @@
             "title": "Zerbitzariarekin komunikatzeko ahaleginetan…",
             "failed": "Badirudi zerbitzaria ez dela erantzuten ari. SSH bidez berriro konektatzen saia zaitezke `systemctl restart yunohost-api` exekutatuz.",
             "reason": {
-                "unknown": "Itxi da komunikazioa zerbitzariarekin, ez da zergatia ezagutzen.",
-                "reboot": "Zerbitzaria berrabiarazten ari da eta ez da erabilgarri egongo tarte batez. Saioa hasteko galdegingo zaizu zerbitzaria berriro ere erabilgarri dagoenean.",
-                "shutdown": "Zerbitzari itzaltzen ari da eta aurrerantzean ez da erabilgarri egongo. Piztu ezazu berriro eta saioa hasteko galdegingo zaizu zerbitzaria berriro erabilgarri dagoenean.",
+                "unknown": "Itxi da komunikazioa zerbitzariarekin, ez da zergatia ezagutzen. Agian 'yunohost-api' ez da exekutatzen ari?",
+                "reboot": "Zerbitzaria berrabiarazten ari da eta ez da erabilgarri egongo tarte batez.",
+                "shutdown": "Zerbitzari itzaltzen ari da eta aurrerantzean ez da erabilgarri egongo.",
                 "upgrade_system": "Zerbitzariarekin konexioa eten da YunoHost eguneratzen ari delako. Zerbitzaria berriro erabilgarri noiz egongo zain…"
             },
             "session_expired": "Zerbitzaria erabilgarri dago! Baina badirudi saioa iraungi dela. Hasi berriro saioa."
-        }
+        },
+        "busy": "Zerbitzaria lanpetuta dago…",
+        "unknown_request": "Eskaera ezezaguna"
     },
     "api_error": {
         "view_error": "Ikusi errorea",
         "error_message": "Errore-mezua:",
         "server_said": "Eragiketa exekutatzean zera adierazi du zerbitzariak:",
         "help": "Laguntza eskatu beharko zenuke <a href=\"https://forum.yunohost.org/\">foroan</a> edo <a href=\"https://chat.yunohost.org/\">txat gelan</a> egoera hau konpontzeko, edo errore honen berri eman <a href=\"https://github.com/YunoHost/issues\">bugtracker</a> plataforman.",
-        "info": "Ondorengo informazioa baliagarria izan dakioke laguntza ematen ari zaionari:",
+        "info": "Honako informazioa baliagarria izan dakioke laguntza ematen ari zaionari:",
         "sorry": "Barkatu."
     },
     "api_waiting": "Zerbitzariaren erantzunaren zain…",
@@ -111,7 +113,10 @@
             "POST": "sortu/exekutatu",
             "PUT": "moldatu"
         },
-        "is_empty": "Historiarik ez oraingoz."
+        "is_empty": "Historiarik ez oraingoz.",
+        "check_logs": "Joan ekintzaren erregistroaren orrira.",
+        "no_logs": "Ez dago erregistrorik eskuragarri.",
+        "started_by": "{caller}(e)k abiarazi du"
     },
     "common": {
         "lastname": "Abizena",
@@ -217,10 +222,8 @@
     "app_state_highquality_explanation": "Aplikazio hau YunoHostera egoki egina dago gutxienez duela urtebetetik.",
     "backup_new": "Babeskopia berria",
     "confirm_delete": "Ziur {name} ezabatu nahi duzula?",
-    "confirm_firewall_allow": "Ziur {port} ataka ireki nahi duzula? (protokoloa: {protocol}, konexioa: {connection})",
     "description": "Azalpena",
     "group_add": "Talde berria",
-    "confirm_firewall_disallow": "Ziur {port} ataka itxi nahi duzula? (protokoloa: {protocol}, konexioa: {connection})",
     "diagnosis": "Diagnostikoak",
     "confirm_service_restart": "Ziur {name} berrabiarazi nahi duzula?",
     "confirm_reboot_action_shutdown": "Ziur zerbitzaria itzali nahi duzula?",
@@ -326,86 +329,6 @@
     "restore": "Lehengoratu",
     "migrations": "Migrazioak",
     "migrations_no_done": "Ez dago lehenagoko migraziorik",
-    "human_routes": {
-        "diagnosis": {
-            "ignore": {
-                "error": "Ezkutatu errorea",
-                "warning": "Ezkutatu jakinarazpena"
-            },
-            "unignore": {
-                "error": "Erakutsi errorea",
-                "warning": "Erakutsi jakinarazpena"
-            },
-            "run": "Abiarazi diagnostikoa",
-            "run_specific": "Exekutatu '{description}'(r)en diagnostikoa"
-        },
-        "backups": {
-            "create": "Sortu babeskopia",
-            "delete": "Ezabatu '{name}' babeskopia",
-            "restore": "Lehengoratu '{name}' babeskopia"
-        },
-        "apps": {
-            "install": "Instalatu '{name}' aplikazioa",
-            "set_default": "'{domain} domeinuaren root-a '{name}'ra birbideratu",
-            "uninstall": "Desinstalatu '{name}' aplikazioa",
-            "update_config": "Eguneratu '{name}' aplikazioaren '{id}' konfigurazio-arbela",
-            "change_url": "Aldatu '{name}'(r)en URLa",
-            "change_label": "'{prevName}' '{nextName}'(r)ekin aldatu",
-            "action_config": "Exekutatu '{name}' aplikazioaren '{action}' ekintza ezarpenetan",
-            "dismiss_notification": "Baztertu '{name}' aplikazioaren jakinarazpena"
-        },
-        "domains": {
-            "add": "Gehitu '{name}' domeinua",
-            "delete": "Ezabatu '{name}' domeinua",
-            "push_dns_changes": "Bidali '{name}' DNS ezarpenak erregistro-enpresara",
-            "update_config": "Eguneratu '{name}' domeinuaren '{id}' konfigurazio-arbela",
-            "set_default": "Ezarri '{name}' domeinu nagusi bezala",
-            "cert_install": "Instalatu ziurtagiria '{name}'(e)rako",
-            "cert_renew": "Berritu ziurtagiria '{name}'(e)rako"
-        },
-        "migrations": {
-            "skip": "Saihestu migrazioak",
-            "run": "Exekutatu migrazioak"
-        },
-        "update": "Bilatu eguneraketak",
-        "firewall": {
-            "ports": "{action} {port} ataka ({protocol}, {connection})",
-            "upnp": "UPnP {action}"
-        },
-        "groups": {
-            "create": "Sortu '{name}' taldea",
-            "add": "Gehitu '{user}' '{name}' taldera",
-            "remove": "Kendu '{user}' '{name}' taldetik",
-            "delete": "Ezabatu '{name}' taldea"
-        },
-        "permissions": {
-            "add": "Baimena eman '{name}'(r)i '{perm}'ra sartzeko",
-            "remove": "Kendu '{name}'(r)i '{perm}'ra sartzeko baimena"
-        },
-        "services": {
-            "restart": "Berrabiarazi '{name}' zerbitzua",
-            "start": "Abiarazi {name}' zerbitzua",
-            "stop": "Geldiarazi '{name}' zerbitzua"
-        },
-        "upgrade": {
-            "system": "Eguneratu sistema",
-            "apps": "Eguneratu aplikazio guztiak",
-            "app": "Eguneratu '{app}' aplikazioa"
-        },
-        "users": {
-            "create": "Sortu '{name}' erabiltzailea",
-            "delete": "Ezabatu '{name}' erabiltzailea",
-            "update": "Aldatu '{name}' erabiltzailea"
-        },
-        "postinstall": "Abiarazi instalazio ondorengo prozesua",
-        "share_logs": "Sortu '{name}' erregistroaren esteka",
-        "shutdown": "Itzali zerbitzaria",
-        "reboot": "Berrabiarazi zerbitzaria",
-        "reconnecting": "Berkonektatzen",
-        "settings": {
-            "update": "Eguneratu '{panel}' ezarpen orokorrak"
-        }
-    },
     "only_highquality_apps": "Kalitate handiko aplikazioak soilik",
     "only_decent_quality_apps": "Kalitate onargarria duten aplikazioak soilik",
     "orphaned": "Arduradunik gabe",
@@ -429,14 +352,14 @@
     "migrations_no_pending": "Ez dago egiteko migraziorik",
     "password_confirmation": "Berridatzi pasahitza",
     "logs_history": "Sisteman exekutatutako komandoen historia",
-    "permission_show_tile_enabled": "Erabiltzaileen atarian lauza moduan ikusgai",
+    "permission_show_tile_enabled": "Atarian lauza moduan ikusgai",
     "ports": "Atakak",
     "postinstall": {
-        "force": "Abiarazi instalazio ondorengo prozesua",
-        "title": "Instalazio ondorengo prozesua",
+        "force": "Abiarazi instalatu ondorengo prozesua",
+        "title": "Instalatu ondorengo prozesua",
         "user": {
             "title": "Sortu lehenengo administratzaile erabiltzailea",
-            "first_user_help": "Erabiltzaile honi administrazio-ahalmenak esleituko zaizkio, eta administrazio-gunea eta SSH konexioa erabiltzeko aukera izango du.\nErabiltzaile arrunta denez, erabiltzaileen ataria (SSO) erabiltzeko aukera ere izango du.\nInstalazio ondorengo prozesuek amaitzen dutenean, administratzaile gehiago sor ditzakezu 'admins' taldera gehituz."
+            "first_user_help": "Erabiltzaile honi administrazio-ahalmenak esleituko zaizkio, eta administrazio-gunea eta SSH konexioa erabiltzeko aukera izango du.\nErabiltzaile arrunta denez, ataria (SSO) erabiltzeko aukera ere izango du.\nInstalazio ondorengo prozesuek amaitzen dutenean, administratzaile gehiago sor ditzakezu 'admins' taldera gehituz."
         }
     },
     "postinstall_set_domain": "Aukeratu domeinu nagusia",
@@ -528,7 +451,9 @@
         "link": "Esteka",
         "none": "Bat ere ez",
         "separator": ", ",
-        "valid": "Baliozkoa"
+        "valid": "Baliozkoa",
+        "comment": "Iruzkina",
+        "edit": "Editatu"
     },
     "users_import_delete": "Ezabatu zerrendan ageri ez diren erabiltzaileak",
     "system_update": "Sistemaren eguneraketak",
@@ -575,7 +500,7 @@
     "yunohost_admin": "YunoHosten administratzailea",
     "skip": "Gerorako utzi",
     "stop": "Geldiarazi",
-    "user_interface_link": "Erabiltzaileen ataria",
+    "user_interface_link": "Ataria",
     "user_username_edit": "Aldatu {name}(r)en kontua",
     "text_selection_is_disabled": "Ezinezkoa da testua hautatzea. Erregistroa partekatu nahi baduzu, erregistro *osoa* partekatu 'Partekatu Yunopastekin' botoiaren bidez.<br/><small>Edo testua hautatu nahi baduzu, sakatu tekla hauek: ↓↓↑↑. </small>",
     "certificate_manage": "Kudeatu SSL ziurtagiria",
@@ -589,7 +514,7 @@
     "details_about": "Erakutsi xehetasun gehiago {subject}(r)i buruz",
     "group_admins": "Administratzaileak",
     "group_explain_admins": "Administratzeko ahalmena duten erabiltzaileen talde berezia da hau. Talde honetan dauden erabiltzaileek YunoHosten web-administrazioa, SSH konexioa eta 'sudo' komandoa erabil dezakete. root{'@'}, admin{'@'} eta admins{'@'} kontuei bidalitako mezu elektronikoak ere jasoko dituzte, diagnostikoen jakinarazpenez gain. Erabat fio zaren erabiltzaileak baino ez zenituzke gehitu beharko talde honetara!",
-    "label_for_manifestname_help": "Erabiltzaileen atarian ageri den izena da hau. Aldatzea dago.",
+    "label_for_manifestname_help": "Atarian ageri den izena da hau. Aldatzea dago.",
     "manage_groups": "Kudeatu taldeak",
     "tools_yunohost_settings": "YunoHosten ezarpenak",
     "wrong_password_or_username": "Pasahitz edo erabiltzaile-izen okerra",
@@ -624,7 +549,7 @@
             "notifs": {
                 "post": {
                     "title": "'{name}' instalatu ondorengo jakinarazpenak",
-                    "alert": "Badirudi instalazioa behar bezala gauzatu dela!\nPaketearen arduradunak ondorengo jakinarazpenak garrantzitsuak direla deritzo.\nAplikazioaren informazio-orrialdean irakur dezakezu berriro."
+                    "alert": "Badirudi instalazioa behar bezala gauzatu dela!\nPaketearen arduradunak honako jakinarazpenak garrantzitsuak direla deritzo.\nAplikazioaren informazio-orrialdean irakur dezakezu berriro."
                 },
                 "pre": {
                     "warning": "Instalatu baino lehen jakin beharrekoak",
@@ -686,10 +611,10 @@
             "notifs": {
                 "pre": {
                     "title": "Kontuz!",
-                    "alert": "Ondorengo oharrak aztertu beharko zenituzke bertsio-berritu baino lehen, litekeena da jakin beharreko zerbait azaltzea."
+                    "alert": "Honako oharrak aztertu beharko zenituzke bertsio-berritu baino lehen, litekeena da jakin beharreko zerbait azaltzea."
                 },
                 "post": {
-                    "alert": "Badirudi bertsio-berritzea behar bezala joan dela! \n Paketearen arduradunak bertsio-berritze honi buruzko ondorengo jakinarazpenak garrantzitsuak direla deritzo. \nAplikazioaren informazio-orrialdean irakur dezakezu berriro.",
+                    "alert": "Badirudi bertsio-berritzea behar bezala joan dela! \n Paketearen arduradunak bertsio-berritze honi buruzko honako jakinarazpenak garrantzitsuak direla deritzo. \nAplikazioaren informazio-orrialdean irakur dezakezu berriro.",
                     "title": "'{name}' bertsio-berritu ondorengo jakinarazpenak"
                 }
             },
@@ -719,5 +644,7 @@
     "catalog_wishlist": "Badirudi bilatzen ari zaren aplikazioa ez dagoela katalogoan.\n Aplikazioen desira-zerrenda](https://apps.yunohost.org/wishlist?search={search})n proposatu dezakezu edo bere aldeko botoa eman dagoeneko zerrendan badago.",
     "catalog_partial_search": "Saia zaitez irizpideak kentzen, bilatzen ari zaren aplikazioa erabilgarri dagoen ikusteko.",
     "install_app": "Instalatu aplikazioa",
-    "quick_action": "Ekintza azkarrak"
+    "quick_action": "Ekintza azkarrak",
+    "confirm_firewall_close": "Ziur {protocol} protokolorako {port} ataka itxi nahi duzula?",
+    "confirm_firewall_open": "Ziur {protocol} protokolorako {port} ataka ireki nahi duzula?"
 }

@@ -26,8 +26,6 @@
     "confirm_app_default": "Volètz vertadièrament definir aquesta aplicacion coma aplicacion per defaut ?",
     "confirm_change_maindomain": "Volètz vertadièrament cambiar lo domeni màger ?",
     "confirm_delete": "Volètz vertadièrament escafar {name} ?",
-    "confirm_firewall_allow": "Volètz vertadièrament dobrir lo pòrt {port} ? (protocòl : {protocol}, connexion : {connection})",
-    "confirm_firewall_disallow": "Volètz vertadièrament tampar lo pòrt {port} ? (protocòl : {protocol}, connexion : {connection})",
     "confirm_install_custom_app": "Atencion ! L’installacion d’aplicacions tèrças pòt perilhar l’integritat e la seguretat del sistèma. Auriatz PAS de n’installar levat que saupèssetz çò que fasètz. Volètz vertadièrament córrer aqueste risc ?",
     "confirm_install_domain_root": "Poiretz pas installar mai aplicacions sus {domain}. Contunhar ?",
     "confirm_migrations_skip": "Passar las migracions es pas recomandat. Volètz vertadièrament o far ?",
@@ -269,79 +267,6 @@
     "cancel": "Anullar",
     "readme": "DeLegir",
     "postinstall_set_domain": "Definir lo domeni principal",
-    "human_routes": {
-        "domains": {
-            "delete": "Suprimir lo domeni « {name} »",
-            "add": "Apondre lo domeni « {name} »",
-            "set_default": "Definir « {name} » coma domeni principal",
-            "update_config": "Actualizacion de la configuracion de « {name} »",
-            "push_dns_changes": "Enviar los enregistraments DNS al registrar per « {name} »"
-        },
-        "migrations": {
-            "skip": "Ignorar las migracions",
-            "run": "Executar las migracions"
-        },
-        "groups": {
-            "add": "Apondre « {user} » al grop « {name} »",
-            "delete": "Suprimir lo grop « {name} »",
-            "remove": "Levar « {user} » d’al grop « {name} »",
-            "create": "Crear lo grop « {name} »"
-        },
-        "postinstall": "Executar la post-installacion",
-        "services": {
-            "stop": "Arrestar lo servici « {name} »",
-            "start": "Lançar lo servici « {name} »",
-            "restart": "Relançar lo servici « {name} »"
-        },
-        "reboot": "Reaviar lo servidor",
-        "shutdown": "Atudar lo servidor",
-        "upgrade": {
-            "apps": "Metre a jorn totas las aplicacions",
-            "system": "Metre a jorn lo sistèma",
-            "app": "Metre a jorn l’aplicacion « {app} »"
-        },
-        "users": {
-            "update": "Metre a jorn l’utilizaire « {name} »",
-            "delete": "Suprimir l’utilizaire « {name} »",
-            "create": "Crear l’utilizaire « {name} »"
-        },
-        "update": "Recercar las mesas a jorn",
-        "share_logs": "Generar un ligam pel jornal « {name} »",
-        "permissions": {
-            "remove": "Levar l’accès « {name} » a « {perm} »",
-            "add": "Autorizar « {name} » a accedir a « {perm} »"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} pòrt {port} ({protocol}, {connection})"
-        },
-        "diagnosis": {
-            "unignore": {
-                "warning": "Ignorar pas un avertiment",
-                "error": "Ignorar pas una error"
-            },
-            "run": "Executar lo diagnostic",
-            "ignore": {
-                "warning": "Ignorar un avertiment",
-                "error": "Ignorar una error"
-            },
-            "run_specific": "Lançar lo diagnostic « {description} »"
-        },
-        "backups": {
-            "restore": "Restaurar la salvagarda « {name} »",
-            "delete": "Suprimir la salvagarda « {name} »",
-            "create": "Crear una salvagarda"
-        },
-        "apps": {
-            "update_config": "Mesa a jorn de la configuracion de l’aplicacion « {name} »",
-            "uninstall": "Desinstallar l’aplicacion « {name} »",
-            "install": "Installar l’aplicacion « {name} »",
-            "change_url": "Modificar l’URL d’accès de « {name} »",
-            "change_label": "Cambiar l’etiqueta de « {prevName} » per « {nextName} »",
-            "set_default": "Desviar la raiç del domeni « {domain} » cap a « {name} »"
-        },
-        "reconnecting": "Reconnexion"
-    },
     "search": {
         "for": "Recercar {items}…",
         "not_found": "I a {items} que correspondon a vòstres critèris. | I a 1 {items} que correspond a vòstres critèris. | I a {items} que correspondon a vòstres critèris."

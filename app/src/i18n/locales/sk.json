@@ -84,8 +84,6 @@
     "confirm_app_change_url": "Naozaj chcete zmeniť prístupovú URL adresu aplikácie?",
     "confirm_app_default": "Naozaj chcete nastaviť túto aplikáciu ako predvolenú?",
     "confirm_change_maindomain": "Naozaj chcete zmeniť hlavnú doménu?",
-    "confirm_firewall_allow": "Naozaj chcete otvoriť port {port} (protokol: {protocol}, spojenie: {connection})",
-    "confirm_firewall_disallow": "Naozaj chcete zatvoriť port {port} (protokol: {protocol}, spojenie: {connection})",
     "confirm_group_add_access_permission": "Naozaj chcete udeliť oprávnenie {perm} na prístup k {name}? Týmto významne zvýšite priestor na možný útok, ak sa ukáže, že {name} nemá čisté úmysly. Toto by ste mali spraviť len vtedy, ak DÔVERUJETE tejto osobe/skupine.",
     "confirm_install_custom_app": "VAROVANIE! Inštalovaním aplikácií tretích strán môžete kompromitovať integritu a bezpečnosť Vášho systému. Pravdepodobne by ste to NEMALI robiť, ak naozaj neviete, aké môžu byť následky. Ste pripravený prijať toto riziko?",
     "confirm_install_domain_root": "Naozaj chcete nainštalovať túto aplikáciu na \"/\"? Následne nebudete môcť nainštalovať žiadne ďalšie aplikácie na {domain}",
@@ -374,81 +372,6 @@
     "restore": "Obnoviť",
     "restart": "Reštartovať",
     "retry": "Znovu",
-    "human_routes": {
-        "apps": {
-            "change_label": "Zmeniť popis z '{prevName}' na '{nextName}'",
-            "change_url": "Zmeniť prístupovú adresu URL '{name}'",
-            "set_default": "Presmerovať koreň domény '{domain}' na '{name}'",
-            "uninstall": "Odinštalovať aplikáciu '{name}'",
-            "install": "Nainštalovať aplikáciu '{name}'",
-            "update_config": "Upraviť konfiguráciu aplikácie '{name}'"
-        },
-        "backups": {
-            "create": "Vytvoriť zálohu",
-            "delete": "Odstrániť zálohu '{name}'",
-            "restore": "Obnoviť zálohu '{name}'"
-        },
-        "diagnosis": {
-            "ignore": {
-                "error": "Ignorovať chybu/hlásenie",
-                "warning": "Ignorovať varovanie"
-            },
-            "run": "Spustiť diagnostiku",
-            "run_specific": "Spustiť diagnostiku '{description}'",
-            "unignore": {
-                "warning": "Zrušiť ignorovanie varovania",
-                "error": "Zrušiť ignorovanie chyby"
-            }
-        },
-        "domains": {
-            "add": "Pridať doménu '{name}'",
-            "delete": "Odstrániť doménu '{name}'",
-            "push_dns_changes": "Odoslať DNS pre '{name}' správcovi domény",
-            "set_default": "Nastaviť '{name}' ako predvolenú doménu",
-            "update_config": "Aktualizovať nastavenie '{name}'",
-            "cert_install": "Nainštalovať certifikáte pre '{name}'",
-            "cert_renew": "Obnoviť certifikát pre '{name}'"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} port {port} ({protocol}, {connection})"
-        },
-        "groups": {
-            "create": "Vytvoriť skupinu '{name}'",
-            "delete": "Odstrániť skupinu '{name}'",
-            "add": "Pridať používateľa '{user}' do skupiny '{name}'",
-            "remove": "Odstrániť používateľa '{user}' zo skupiny '{name}'"
-        },
-        "migrations": {
-            "run": "Spustiť migrácie",
-            "skip": "Preskočiť migrácie"
-        },
-        "postinstall": "Spustiť poinštalačný skript",
-        "reboot": "Reštartovať server",
-        "services": {
-            "start": "Spustiť službu '{name}'",
-            "stop": "Zastaviť službu '{name}'",
-            "restart": "Reštartovať službu '{name}'"
-        },
-        "share_logs": "Vygenerovať odkaz pre záznam '{name}'",
-        "update": "Skontrolovať aktualizácie",
-        "upgrade": {
-            "system": "Aktualizovať systém",
-            "apps": "Aktualizovať všetky aplikácie",
-            "app": "Aktualizovať aplikáciu '{app}'"
-        },
-        "users": {
-            "delete": "Odstrániť používateľa '{name}'",
-            "create": "Vytvoriť používateľa '{name}'",
-            "update": "Upraviť používateľa '{name}'"
-        },
-        "permissions": {
-            "add": "Povoliť '{name}' prístup k '{perm}'",
-            "remove": "Odobrať '{name}' prístup k '{perm}'"
-        },
-        "reconnecting": "Opätovný pokus o pripojenie",
-        "shutdown": "Vypnúť server"
-    },
     "only_decent_quality_apps": "Iba aplikácie prijateľnej kvality",
     "operation_failed_explanation": "Táto akcia skončila s chybou! Je nám to ľúto :( Môžete skúsiť <a href='https://yunohost.org/help'>požiadať o pomoc</a>. Pomáhajúcim používateľom dodajte, prosím, *podrobný záznam* o spustenej akcii. Môžete tak urobiť kliknutím na zelené tlačidlo „Zdieľať s Yunopaste“. Pri zdieľaní záznamov sa Yunohost pokúsi automaticky anonymizovať súkromné údaje ako sú napr. doménové mená alebo IP adresy.",
     "perform": "Vykonať",

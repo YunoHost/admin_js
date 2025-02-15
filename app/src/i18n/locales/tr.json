@@ -151,86 +151,6 @@
     "group_name": "Grup adı",
     "others": "Diğer",
     "logs_suboperations": "Alt operasyonlar",
-    "human_routes": {
-        "apps": {
-            "uninstall": "'{name}' uygulamasını kaldırın",
-            "install": "'{name}' uygulamasını yükleyin",
-            "change_label": "'{prevName}' etiketini '{nextName}' ile değiştirin",
-            "change_url": "'{name}' erişim URL'sini değiştir",
-            "set_default": "'{domain}' alan kökünü '{name}' olarak yönlendirin",
-            "update_config": "{id}. paneldeki '{name}' uygulamasının yapılandırmasını güncelleyin",
-            "action_config": "Uygulama {name} için {action} eylemini çalıştır",
-            "dismiss_notification": "'{name}' için bildirimi iptal et"
-        },
-        "diagnosis": {
-            "run_specific": "'{description}' tanılamasını çalıştır",
-            "unignore": {
-                "error": "Hatayı dikkate al",
-                "warning": "Uyarıyı dikkate al"
-            },
-            "ignore": {
-                "error": "Hatayı görmezden gel",
-                "warning": "Uyarıyı görmezden gel"
-            },
-            "run": "Tanılamayı çalıştır"
-        },
-        "domains": {
-            "push_dns_changes": "'{name}' için DNS kayıtlarını kayıt kuruluşuna gönder",
-            "add": "'{name}' alan adını ekle",
-            "update_config": "{id}. paneldeki '{name}' yapılandırmasını güncelleyin",
-            "delete": "'{name}' alan adını sil",
-            "set_default": "'{name}' alan adını varsayılan yap",
-            "cert_install": "{name} için sertifika kur",
-            "cert_renew": "{name} için sertifika yenile"
-        },
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} port {port} ({protocol}, {connection})"
-        },
-        "groups": {
-            "create": "'{name}' grubunu oluştur",
-            "add": "'{user}' kullanıcısını '{name}' grubuna ekle",
-            "delete": "'{name}' grubunu sil",
-            "remove": "'{user}' kullanıcısını '{name}' grubundan kaldır"
-        },
-        "migrations": {
-            "skip": "Geçişleri atla",
-            "run": "Geçişleri çalıştır"
-        },
-        "backups": {
-            "delete": "Yedeği sil: '{name}'",
-            "restore": "Yedeği restore et: '{name}'",
-            "create": "Yedek oluştur"
-        },
-        "permissions": {
-            "add": "'{name}' 'in '{perm}' erişmesine izin verin",
-            "remove": "'{name}' için '{perm}'erişimini kaldır"
-        },
-        "postinstall": "Post-install'ı çalıştır",
-        "shutdown": "Sunucuyu kapat",
-        "users": {
-            "delete": "'{name}' kullanıcısını sil",
-            "update": "'{name}' kullanıcısını güncelle",
-            "create": "'{name}' kullanıcısını oluştur"
-        },
-        "services": {
-            "start": "'{name}' servisini başlat",
-            "stop": "'{name}' servisini durdur",
-            "restart": "'{name}' servisini yeniden başlat"
-        },
-        "reboot": "Sunucuyu yeniden başlat",
-        "upgrade": {
-            "system": "Sistemi güncelle",
-            "apps": "Tüm uygulamaları güncelle",
-            "app": "'{app}' uygulamasını güncelle"
-        },
-        "reconnecting": "Yeniden bağlanıyor",
-        "share_logs": "'{name}' günlüğü için bağlantı oluştur",
-        "update": "Güncellemeleri kontrol et",
-        "settings": {
-            "update": "{panel} global ayarlarını güncelle"
-        }
-    },
     "hook_data_xmpp": "XMPP verileri",
     "domain": {
         "config": {
@@ -336,7 +256,8 @@
             "failed": "Sunucu yanıt vermiyor gibi görünüyor. Yeniden bağlanmayı deneyebilir veya ssh aracılığıyla `systemctl restart yunohost-api` çalıştırmayı deneyebilirsiniz."
         },
         "partial_logs": "[…] (tam günlükler için geçmişe bakın)",
-        "processing": "Sunucu eylemi işliyor…"
+        "processing": "Sunucu eylemi işliyor…",
+        "busy": "Bu sunucu yoğun…"
     },
     "install": "Yükle",
     "readme": "Beni oku",
@@ -365,7 +286,6 @@
         "APIInternalError": "YunoHost \"internal\" bir hata ile karşılaştı"
     },
     "app_show_categories": "Kategorileri göster",
-    "confirm_firewall_allow": "{port} bağlantı noktasını açmak istediğinizden emin misiniz? (protokol: {protocol}, bağlantı: {connection})",
     "domain_add_dyndns_forbidden": "Zaten Yunohost'dan bir DynDNS alan adına kayıt oldunuz/abone oldunuz. Yapısı gereği bu özellik server başına bir alan adı ile sınırlıdır. Eğer önceden kayıt ettirdiğiniz bir domaine alt-alan adı eklemek istiyorsanız lütfen\"Kendime ait bir alan adı veya alt-alan adı eklemeyi seçin. Eğer tamamen farklı bir alan adı kullanmak istiyorsanız, öncelikle varolan DynDNS alan adınızı silmeniz gereklidir. DynDNS Self-Host(Kendinde barındırma Türkçe karşılığı)'a başlarken iyidir fakat belli bir zamandan sonra, gerçekten kendine ait bir alan adı almanızı tavsiye ediyoruz.",
     "domain_dns_push_failed_to_authenticate": "Yetkilendirme başarısız oldu. Büyük ihtimalle <a href='#/domains/{domain}/config'>kimlik bilgileri</a> hatalı? (Hata: {error})",
     "experimental_warning": "Uyarı: Bu özellik deneyseldir ve istikrarlı olarak kabul edilmez, ne yaptığınızı bilmiyorsanız kullanmamalısınız.",
@@ -399,7 +319,6 @@
     "backup_new": "Yeni yedek",
     "confirm_app_change_url": "Uygulama erişim URL'sini değiştirmek istediğinizden emin misiniz?",
     "confirm_app_default": "Bu uygulamayı varsayılan yapmak istediğinizden emin misiniz?",
-    "confirm_firewall_disallow": "{port} bağlantı noktasını kapatmak istediğinizden emin misiniz? (protokol: {protocol}, bağlantı: {connection})",
     "confirm_group_add_access_permission": "{name} için {perm} erişimi vermek istediğinizden emin misiniz? {name} kötü niyetli bir kişi olursa, bu tür erişim saldırı yüzeyini önemli ölçüde artırır. Bunu yalnızca bu kişiye/gruba GÜVENİYORSANIZ yapmalısınız.",
     "confirm_install_custom_app": "UYARI! 3. taraf uygulamaları yüklemek, sisteminizin bütünlüğünü ve güvenliğini tehlikeye atabilir. Ne yaptığınızı bilmiyorsanız muhtemelen KURMAMALISINIZ. Bu riski almaya hazır mısınız?",
     "confirm_install_domain_root": "Bu uygulamayı kök dizin '/' üzerine kurmak istediğinizden emin misiniz? {domain} alan adına başka bir uygulama yükleyemeyeceksiniz",

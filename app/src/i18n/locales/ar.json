@@ -26,8 +26,6 @@
     "confirm_app_default": "أمتأكد مِن أنك تود تعيين هذا التطبيق كبرنامج إفتراضي ؟",
     "confirm_change_maindomain": "متأكد من أنك تريد تغيير النطاق الرئيسي ؟",
     "confirm_delete": "هل تود حقًا حذف {name} ؟",
-    "confirm_firewall_allow": "متأكد مِن أنك تود فتح منفذ {port} ؟ (بروتوكول : {protocol}، إتصال : {connection})",
-    "confirm_firewall_disallow": "متأكد مِن أنك تود إغلاق منفذ {port} ؟ (بروتوكول : {protocol}، إتصال : {connection})",
     "confirm_install_custom_app": "إنّ خيار تنصيب تطبيقات خارجية قد يؤثر على أمان نظامكم. ربما وجب عليكم ألا تقوموا بالتنصيب إلا إن كنتم حقا مدركون بما أنتم فاعلين. هل أنتم مستعدون للمخاطرة؟",
     "confirm_install_domain_root": "هل أنت متأكد أنك تريد تثبيت هذا التطبيق على \"/\"؟ لن يكون بامكانك تثبيت أي تطبيق آخر على {domain}",
     "confirm_postinstall": "إنك بصدد إطلاق خطوة ما بعد التنصيب على النطاق {domain}. سوف تستغرق العملية بضع دقائق، لذلك *يُرجى عدم إيقاف العملية*.",
@@ -292,82 +290,6 @@
         "username": "foulanealallani",
         "fullname": "فلان علان",
         "file": "استعراض ملف أو سحبه وإفلاته"
-    },
-    "human_routes": {
-        "domains": {
-            "add": "إضافة اسم النطاق '{name}'",
-            "delete": "حذف اسم النطاق '{name}'",
-            "set_default": "تعيين '{name}' كاسم نطاق افتراضي",
-            "update_config": "تحديث لوح '{id}' لضبط اسم النطاق '{name}'",
-            "cert_install": "تنصيب شهادة لـ '{name}'",
-            "cert_renew": "تجديد شهادة '{name}'",
-            "push_dns_changes": "دفع سجلات DNS إلى مكتب التسجيل لـ '{name}'"
-        },
-        "services": {
-            "start": "تشغيل خدمة '{name}'",
-            "stop": "إيقاف خدمة '{name}'",
-            "restart": "إعادة تشغيل الخدمة '{name}'"
-        },
-        "groups": {
-            "create": "انشاء فريق '{name}'",
-            "delete": "حذف الفريق '{name}'",
-            "remove": "حذف '{user}' مِن الفريق '{name}'",
-            "add": "إضافة '{user}' إلى الفريق '{name}'"
-        },
-        "update": "البحث عن تحديثات",
-        "apps": {
-            "install": "تنصيب التطبيق '{name}'",
-            "uninstall": "إلغاء تنصيب التطبيق '{name}'",
-            "change_url": "تعديل الرابط الشبكي للوصول إلى '{name}'",
-            "set_default": "تحويل جذر النطاق '{domain}' إلى '{name}'",
-            "dismiss_notification": "تجاهل إشعارات '{name}'"
-        },
-        "backups": {
-            "create": "إنشاء نسخة احتياطية",
-            "delete": "حذف النسخة الإحتياطية '{name}'",
-            "restore": "استعادة النسخة الإحتياطية '{name}'"
-        },
-        "diagnosis": {
-            "ignore": {
-                "error": "تجاهل خطأ",
-                "warning": "تجاهل تحذير"
-            },
-            "run": "تنفيذ الفحص",
-            "run_specific": "إطلاق الفحص '{description}'",
-            "unignore": {
-                "warning": "إلغاء تجاهل التحذير",
-                "error": "إلغاء تجاهل خطأ"
-            }
-        },
-        "postinstall": "تنفيذ ما بعد التنصيب",
-        "upgrade": {
-            "apps": "تحديث كافة التطبيقات",
-            "app": "تحديث التطبيق '{app}'",
-            "system": "تحديث النظام"
-        },
-        "users": {
-            "delete": "حذف المستخدم '{name}'",
-            "update": "تحديث المستخدم '{name}'",
-            "create": "إنشاء المستخدم '{name}'"
-        },
-        "reboot": "إعادة تشغيل الخادم",
-        "shutdown": "إطفاء الخادم",
-        "reconnecting": "محاولة إعادة الإتصال",
-        "firewall": {
-            "upnp": "{action} UPnP",
-            "ports": "{action} منفذ {port} ({protocol}, {connection})"
-        },
-        "permissions": {
-            "add": "السماح لـ '{name}' بالنفاذ إلى '{perm}'"
-        },
-        "migrations": {
-            "skip": "تجاهل التهجيرات",
-            "run": "إطلاق الهجرات"
-        },
-        "settings": {
-            "update": "تحديث الإعدادات العامة لـ '{panel}'"
-        },
-        "share_logs": "توليد رابط لسِجِل '{name}'"
     },
     "confirm_app_install": "متأكد من أنك تريد تنصيب هذا التطبيق؟",
     "footer": {
