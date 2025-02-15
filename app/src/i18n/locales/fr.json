@@ -411,7 +411,7 @@
             "title": "Tentative de communication avec le serveur…",
             "failed": "Le serveur ne répond pas. Vous pouvez essayer de vous reconnecter ou essayer d'exécuter `systemctl restart yunohost-api` via SSH.",
             "reason": {
-                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues. Peut-être que l''api-yunohost' ne répond plus ?",
+                "unknown": "La connexion avec le serveur a été fermée pour des raisons inconnues. Peut-être que 'yunohost-api' ne répond plus ?",
                 "reboot": "Votre serveur redémarre et ne sera pas joignable pendant un certain temps.",
                 "shutdown": "Votre serveur est en train de s'arrêter et n'est plus joignable.",
                 "upgrade_system": "La connexion avec le serveur a été fermée en raison de la mise à jour de YunoHost. Il vous faut patienter jusqu'à ce que le serveur soit à nouveau joignable…"
