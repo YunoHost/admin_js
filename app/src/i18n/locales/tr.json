@@ -256,7 +256,8 @@
             "failed": "Sunucu yanıt vermiyor gibi görünüyor. Yeniden bağlanmayı deneyebilir veya ssh aracılığıyla `systemctl restart yunohost-api` çalıştırmayı deneyebilirsiniz."
         },
         "partial_logs": "[…] (tam günlükler için geçmişe bakın)",
-        "processing": "Sunucu eylemi işliyor…"
+        "processing": "Sunucu eylemi işliyor…",
+        "busy": "Bu sunucu yoğun…"
     },
     "install": "Yükle",
     "readme": "Beni oku",
