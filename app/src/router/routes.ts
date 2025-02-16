@@ -342,6 +342,28 @@ const routes: RouteRecordRaw[] = [
   },
 
   /* ────────────╮
+   │   STORAGE   │
+   ╰──────────── */
+  {
+    name: 'storage',
+    path: '/storage',
+    component: () => import('@/views/storage/StorageList.vue'),
+    meta: {
+      args: { trad: 'storage' },
+      breadcrumb: ['storage'],
+    },
+  },
+  {
+    name: 'storage-disks',
+    path: '/storage/disks',
+    component: () => import('@/views/storage/DiskList.vue'),
+    meta: {
+      args: { trad: 'storage_disks.category_name' },
+      breadcrumb: ['storage', 'storage-disks'],
+    },
+  },
+
+  /* ────────────╮
    │  DIAGNOSIS  │
    ╰──────────── */
   {

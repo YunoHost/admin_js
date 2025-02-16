@@ -3,6 +3,7 @@ const menu = [
   { routeName: 'user-list', icon: 'users', translation: 'users' },
   { routeName: 'domain-list', icon: 'globe', translation: 'domains' },
   { routeName: 'app-list', icon: 'cubes', translation: 'applications' },
+  { routeName: 'storage', icon: 'hdd-o', translation: 'storage' },
   { routeName: 'update', icon: 'refresh', translation: 'system_update' },
   { routeName: 'tool-list', icon: 'wrench', translation: 'tools' },
   {

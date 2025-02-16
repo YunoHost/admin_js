@@ -308,7 +308,9 @@
         "backups": "aucune sauvegarde | sauvegarde | sauvegardes",
         "apps": "aucune application | app | apps",
         "permissions": "pas d'autorisations | permission | autorisations",
-        "items": "aucun article | article | articles"
+        "items": "aucun article | article | articles",
+        "disk": "aucun disque | disque | disques",
+        "inserted_disk": "aucun disque inséré | disque inséré | disques insérés"
     },
     "history": {
         "methods": {
