@@ -1,11 +1,12 @@
 import { getKeys, joinOrNull } from '@/helpers/commons'
-import type { Obj } from '@/types/commons'
+import { formatI18nField } from '@/helpers/yunohostArguments'
+import type { Obj, Translation } from '@/types/commons'
 import type { AppLevel, AppManifest, AppState } from '@/types/core/api'
 
-export function formatAppNotifs(notifs: Obj<string> | null): string {
+export function formatAppNotifs(notifs: Obj<Translation> | null): string {
   if (!notifs) return ''
   return getKeys(notifs).reduce((acc, key) => {
-    return acc + '\n\n' + notifs[key]
+    return acc + '\n\n' + formatI18nField(notifs[key])
   }, '')
 }
 

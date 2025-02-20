@@ -19,6 +19,7 @@ declare module 'vue' {
     BButtonToolbar: typeof import('bootstrap-vue-next/components/BButton')['BButtonToolbar']
     BCard: typeof import('bootstrap-vue-next/components/BCard')['BCard']
     BCardBody: typeof import('bootstrap-vue-next/components/BCard')['BCardBody']
+    BCardFooter: typeof import('bootstrap-vue-next/components/BCard')['BCardFooter']
     BCardGroup: typeof import('bootstrap-vue-next/components/BCard')['BCardGroup']
     BCardHeader: typeof import('bootstrap-vue-next/components/BCard')['BCardHeader']
     BCardText: typeof import('bootstrap-vue-next/components/BCard')['BCardText']

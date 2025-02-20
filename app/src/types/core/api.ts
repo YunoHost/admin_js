@@ -1,5 +1,5 @@
 import type { Obj, StateVariant, Translation } from '@/types/commons'
-import type { Permission } from '@/types/core/data'
+import type { AppPermInfos } from '@/types/core/data'
 import type { AnyOption } from '@/types/core/options'
 
 // APPS
@@ -117,7 +117,7 @@ export type AppInfo = {
   upgradable: string
   settings: { domain?: string; path?: string } & Obj
   setting_path: string
-  permissions: Obj<Permission & { sublabel: string }>
+  permissions: Obj<AppPermInfos & { sublabel: string }>
   manifest: AppMinManifest & {
     install: Obj<AnyOption>
     upstream: {

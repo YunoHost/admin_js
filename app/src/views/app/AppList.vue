@@ -7,8 +7,11 @@ const apps = await api
   .get<AppList>({ uri: 'apps?full', initial: true })
   .then(({ apps }) => {
     return apps
-      .map(({ id, name, description, manifest }) => {
-        return { id, name: manifest.name, label: name, description }
+      .map(({ id, name, description, manifest, logo }) => {
+        const logoUrl = logo
+          ? `https://10.118.36.150/yunohost/admin/applogos/${logo}.png`
+          : undefined
+        return { id, name: manifest.name, label: name, description, logoUrl }
       })
       .sort((prev, app) => {
         return prev.label > app.label ? 1 : -1
@@ -35,12 +38,13 @@ const [search, filteredApps] = useSearch(apps, (s, app) =>
 
     <BListGroup>
       <YListItem
-        v-for="{ id, description, label } in filteredApps"
+        v-for="{ id, description, label, logoUrl } in filteredApps"
         :key="id"
-        :to="{ name: 'app-info', params: { id } }"
+        :to="{ name: 'app-info', params: { id, coreTabId: '_core' } }"
         :label="label"
         :sublabel="id"
         :description="description"
+        :image-src="logoUrl"
       />
     </BListGroup>
   </ViewSearch>

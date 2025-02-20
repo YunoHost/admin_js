@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
@@ -7,23 +7,24 @@ import api, { objectToParams } from '@/api'
 import { type APIError } from '@/api/errors'
 import ConfigPanelsComponent from '@/components/ConfigPanels.vue'
 import { formatConfigPanels, useConfigPanels } from '@/composables/configPanels'
-import { useDomains } from '@/composables/data'
-import { useArrayRule, useForm } from '@/composables/form'
 import { useAutoModal } from '@/composables/useAutoModal'
 import { isEmptyValue, joinOrNull, pick, toEntries } from '@/helpers/commons'
 import { humanPermissionName } from '@/helpers/filters/human'
-import { required } from '@/helpers/validators'
 import { formatI18nField } from '@/helpers/yunohostArguments'
 import type { Obj } from '@/types/commons'
 import type { AppInfo } from '@/types/core/api'
 import type { Permission } from '@/types/core/data'
 import type { CoreConfigPanels } from '@/types/core/options'
-import type { BaseItemComputedProps } from '@/types/form'
 import AppIntegrationAndLinks from './_AppIntegrationAndLinks.vue'
-import { formatAppIntegration, formatAppLinks } from './appData'
+import {
+  formatAppIntegration,
+  formatAppLinks,
+  formatAppNotifs,
+} from './appData'
 
 const props = defineProps<{
   id: string
+  coreTabId?: string
   tabId?: string
 }>()
 
@@ -31,30 +32,23 @@ const { t } = useI18n()
 const router = useRouter()
 const modalConfirm = useAutoModal()
 
-const [app, form, coreConfig, configPanelErr] = await api
-  .fetchAll<[AppInfo, Obj<Permission>]>([
+const [app, form, coreConfigData, appConfigData, configPanelErr] = await api
+  .fetchAll<[AppInfo, CoreConfigPanels, Obj<Permission>]>([
     { uri: `apps/${props.id}?full` },
+    { uri: `apps/${props.id}/config?full&core` },
     // FIXME permissions needed?
     { uri: 'users/permissions?full', cachePath: 'permissions' },
     { uri: 'domains', cachePath: 'domains' },
   ])
-  .then(async ([app_]) => {
+  .then(async ([app_, coreConfigData]) => {
     // Query config panels if app supports it
-    let config: CoreConfigPanels = {
-      panels: [{ id: 'operations', name: t('operations') }],
-    }
-    let configPanelErr: string | undefined
+    let appConfigData: CoreConfigPanels | undefined
+    let appConfigPanelErr: string | undefined
     if (app_.supports_config_panel) {
       await api
         .get<CoreConfigPanels>(`apps/${props.id}/config?full`)
-        .then((coreConfig) => {
-          // Fake integration of operations in config panels
-          coreConfig.panels.unshift(config.panels[0])
-          config = coreConfig
-        })
-        .catch((err: APIError) => {
-          configPanelErr = err.message
-        })
+        .then((data) => (appConfigData = data))
+        .catch((err: APIError) => (appConfigPanelErr = err.message))
     }
 
     const { domain, path } = app_.settings
@@ -88,8 +82,8 @@ const [app, form, coreConfig, configPanelErr] = await api
       version: app_.version,
       label,
       domain,
+      logo: app_.logo,
       url: domain && path ? `https://${domain}${path}` : null,
-      allowedGroups: allowed.length ? allowed.join(', ') : t('nobody'),
       alternativeTo: joinOrNull(app_.from_catalog.potential_alternative_to),
       description: formatI18nField(DESCRIPTION) || app_.description,
       integration: formatAppIntegration(
@@ -123,20 +117,68 @@ const [app, form, coreConfig, configPanelErr] = await api
             ]),
         ].filter((doc) => doc[1]),
       },
-      isWebapp: app_.is_webapp,
-      isDefault: ref(app_.is_default),
-      supportsChangeUrl: app_.supports_change_url,
       supportsPurge: app_.supports_purge,
-      permissions,
+      preUpgradeMessage: formatAppNotifs(
+        app_.manifest.notifications.PRE_UPGRADE,
+      ),
     }
 
-    return [app, form, config, configPanelErr] as const
+    return [
+      app,
+      form,
+      coreConfigData,
+      appConfigData,
+      appConfigPanelErr,
+    ] as const
   })
-const { domainsAsChoices } = useDomains()
 
-const config = coreConfig
+const coreConfig = useConfigPanels(
+  formatConfigPanels(coreConfigData),
+  () => props.coreTabId,
+  async ({ panelId, data, action }, onError) => {
+    let confirmed: boolean | null | undefined = true
+    if (action?.includes('uninstall')) {
+      // FIXME check if at some point bootstrap-vue allows to await for a defined modal to resolve
+      showModalUninstall.value = true
+      return
+    } else if (action?.includes('force_upgrade')) {
+      confirmed = await modalConfirm(t('confirm_app_force_upgrade'))
+      if (!confirmed) return
+
+      if (app.preUpgradeMessage) {
+        const message =
+          t('app.upgrade.notifs.pre.alert') + '\n\n' + app.preUpgradeMessage
+        confirmed = await modalConfirm(
+          message,
+          {
+            title: t('app.upgrade.notifs.pre.title', {
+              name: app.label,
+            }),
+            okTitle: t('ok'),
+          },
+          { markdown: true },
+        )
+      }
+    } else if (action?.includes('change_url')) {
+      confirmed = await modalConfirm(t('confirm_app_change_url'))
+    }
+    if (!confirmed) return
+    api
+      .put({
+        uri: action
+          ? `apps/${props.id}/actions/${action}?core`
+          : `apps/${props.id}/config/${panelId}?core`,
+        data: isEmptyValue(data) ? {} : { args: objectToParams(data) },
+      })
+      .then(() => api.refetch())
+      .catch(onError)
+  },
+  'coreTabId',
+)
+
+const appConfig = appConfigData
   ? useConfigPanels(
-      formatConfigPanels(coreConfig),
+      formatConfigPanels(appConfigData),
       () => props.tabId,
       ({ panelId, data, action }, onError) => {
         api
@@ -152,55 +194,8 @@ const config = coreConfig
     )
   : undefined
 
-const fields = {
-  labels: reactive({
-    rules: useArrayRule(() => form.value.labels, { label: { required } }),
-  }),
-  url: {
-    rules: { domain: { required } },
-  },
-}
-const { v } = useForm(form, fields)
+const showModalUninstall = ref(false)
 const purge = ref(false)
-
-async function changeLabel(permName: string, i: number) {
-  if (!(await v.value.form.labels[i].$validate())) return
-  const data = form.value.labels[i]
-  api
-    .put({
-      uri: 'users/permissions/' + permName,
-      data: {
-        label: data.label,
-        show_tile: data.show_tile ? 'True' : 'False',
-      },
-    })
-    // FIXME really need to refetch? permissions store update should be ok
-    .then(() => api.refetch())
-}
-
-async function changeUrl() {
-  if (!(await v.value.form.url.$validate())) return
-  const confirmed = await modalConfirm(t('confirm_app_change_url'))
-  if (!confirmed) return
-
-  const { domain, path } = form.value.url!
-  api
-    .put({
-      uri: `apps/${props.id}/changeurl`,
-      data: { domain, path: '/' + path },
-    })
-    // Refetch because some content of this page relies on the url
-    .then(() => api.refetch())
-}
-
-async function setAsDefaultDomain(undo = false) {
-  const confirmed = await modalConfirm(t('confirm_app_default'))
-  if (!confirmed) return
-
-  api
-    .put({ uri: `apps/${props.id}/default${undo ? '?undo' : ''}` })
-    .then(() => (app.isDefault.value = true))
-}
 
 async function dismissNotification(name: string) {
   api
@@ -211,9 +206,9 @@ async function dismissNotification(name: string) {
 
 async function uninstall() {
   const data = purge.value === true ? { purge: 1 } : {}
-  api.delete({ uri: 'apps/' + props.id, data }).then(() => {
-    router.push({ name: 'app-list' })
-  })
+  api
+    .put({ uri: `apps/${props.id}/actions/_core.operations.uninstall`, data })
+    .then(() => router.push({ name: 'app-list' }))
 }
 </script>
 
@@ -274,7 +269,14 @@ async function uninstall() {
     <section class="border rounded p-3 mb-4">
       <div class="d-md-flex align-items-center mb-4">
         <h1 class="mb-3 mb-md-0">
-          <YIcon iname="cube" />
+          <template v-if="app.logo">
+            <img
+              :src="`https://10.118.36.150/yunohost/admin/applogos/${app.logo}.png`"
+            />
+          </template>
+          <template v-else>
+            <YIcon iname="cube" />
+          </template>
           {{ app.label }}
 
           <span class="text-secondary tiny">
@@ -291,16 +293,6 @@ async function uninstall() {
         >
           <YIcon iname="external-link" />
           {{ $t('app.open_this_app') }}
-        </BButton>
-
-        <BButton
-          id="uninstall"
-          v-b-modal.uninstall-modal
-          variant="danger"
-          :class="{ 'ms-auto': !app.url }"
-        >
-          <YIcon iname="trash-o" />
-          {{ $t('uninstall') }}
         </BButton>
       </div>
 
@@ -329,143 +321,23 @@ async function uninstall() {
       <p>{{ $t('app.info.config_panel_error_please_report') }}</p>
     </YAlert>
 
+    <ConfigPanelsComponent
+      v-model="coreConfig.form.value"
+      :panel="coreConfig.panel.value"
+      :validations="coreConfig.v.value"
+      :routes="coreConfig.routes"
+      @apply="coreConfig.onPanelApply"
+    />
+
     <!-- BASIC INFOS -->
     <ConfigPanelsComponent
-      v-if="config"
-      v-model="config.form.value"
-      :panel="config.panel.value"
-      :validations="config.v.value"
-      :routes="config.routes"
-      @apply="config.onPanelApply"
-    >
-      <!-- OPERATIONS TAB -->
-      <template v-if="tabId === 'operations'" #default>
-        <!-- CHANGE PERMISSIONS LABEL -->
-        <BFormGroup
-          :label="$t('app_manage_label_and_tiles')"
-          label-class="fw-bold"
-        >
-          <FormField
-            v-for="(perm, i) in app.permissions"
-            :key="i"
-            :label="perm.title"
-            :label-for="'perm-' + i"
-            label-cols="0"
-            label-class=""
-            class="m-0"
-            :validation="v.form.labels[i]"
-          >
-            <template #default="componentProps">
-              <BInputGroup>
-                <InputItem
-                  :id="'perm' + i"
-                  v-bind="componentProps as BaseItemComputedProps"
-                  v-model="form.labels[i].label"
-                />
-
-                <BInputGroupText v-if="perm.tileAvailable">
-                  <CheckboxItem
-                    v-model="form.labels[i].show_tile"
-                    :label="$t('permission_show_tile_enabled')"
-                  />
-                </BInputGroupText>
-
-                <BButton
-                  v-t="'save'"
-                  variant="info"
-                  @click="changeLabel(perm.name, i)"
-                />
-              </BInputGroup>
-            </template>
-
-            <template v-if="perm.url" #description>
-              {{ $t('permission_corresponding_url') }}:
-              <BLink :href="'https://' + perm.url">
-                https://{{ perm.url }}
-              </BLink>
-            </template>
-          </FormField>
-        </BFormGroup>
-        <hr />
-
-        <!-- PERMISSIONS -->
-        <BFormGroup
-          :label="$t('app_info_access_desc')"
-          label-for="permissions"
-          label-class="fw-bold"
-          label-cols-lg="0"
-        >
-          {{ app.allowedGroups }}
-          <BButton
-            size="sm"
-            :to="{ name: 'group-list' }"
-            variant="info"
-            class="ms-2"
-          >
-            <YIcon iname="key-modern" />
-            {{ $t('groups_and_permissions_manage') }}
-          </BButton>
-        </BFormGroup>
-        <hr />
-
-        <!-- CHANGE URL -->
-        <FormField
-          v-if="app.isWebapp"
-          :label="$t('app_info_changeurl_desc')"
-          :label-cols="0"
-          label-class="fw-bold"
-        >
-          <BInputGroup v-if="app.supportsChangeUrl && form.url">
-            <BInputGroupText>https://</BInputGroupText>
-
-            <BFormSelect
-              v-model="form.url.domain"
-              :options="domainsAsChoices"
-            />
-
-            <BInputGroupText>/</BInputGroupText>
-
-            <BFormInput v-model="form.url.path" class="flex-grow-3" />
-
-            <BButton v-t="'save'" variant="info" @click="changeUrl" />
-          </BInputGroup>
-
-          <div v-else class="alert alert-warning">
-            <YIcon iname="exclamation" />
-            {{ $t('app_info_change_url_disabled_tooltip') }}
-          </div>
-        </FormField>
-        <hr v-if="app.isWebapp" />
-
-        <!-- MAKE DEFAULT -->
-        <FormField
-          v-if="app.isWebapp"
-          :label="$t('app_info_default_desc', { domain: app.domain })"
-          label-for="main-domain"
-          label-cols="0"
-        >
-          <template v-if="!app.isDefault.value">
-            <BButton
-              id="main-domain"
-              variant="success"
-              @click="setAsDefaultDomain(false)"
-            >
-              <YIcon iname="star" /> {{ $t('app_make_default') }}
-            </BButton>
-          </template>
-
-          <template v-else>
-            <BButton
-              id="main-domain"
-              variant="warning"
-              @click="setAsDefaultDomain(true)"
-            >
-              <YIcon iname="star" /> {{ $t('app_make_not_default') }}
-            </BButton>
-          </template>
-        </FormField>
-      </template>
-    </ConfigPanelsComponent>
+      v-if="appConfig"
+      v-model="appConfig.form.value"
+      :panel="appConfig.panel.value"
+      :validations="appConfig.v.value"
+      :routes="appConfig.routes"
+      @apply="appConfig.onPanelApply"
+    />
 
     <BCard v-if="app.doc.admin.length" no-body>
       <BTabs card fill pills>
@@ -483,6 +355,7 @@ async function uninstall() {
 
     <BModal
       id="uninstall-modal"
+      v-model="showModalUninstall"
       centered
       :title="$t('confirm_uninstall', { name: id })"
       header-variant="warning"
@@ -499,6 +372,10 @@ async function uninstall() {
 </template>
 
 <style lang="scss" scoped>
+h1 img {
+  width: 2.5rem;
+}
+
 select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

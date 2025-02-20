@@ -5,7 +5,6 @@ import { ref } from 'vue'
 const props = withDefaults(
   defineProps<{
     id?: string
-    asTab?: boolean
     noBody?: boolean
     title?: string
     titleTag?: string
@@ -16,7 +15,6 @@ const props = withDefaults(
   }>(),
   {
     id: 'ynh-form',
-    asTab: false,
     noBody: false,
     title: undefined,
     titleTag: 'h2',
@@ -41,9 +39,9 @@ const visible = ref(!props.collapsed)
 <template>
   <BCard
     :no-body="collapsible ? true : noBody"
-    :class="{ 'border-0': asTab, collapsible: collapsible }"
+    :class="{ collapsible: collapsible }"
   >
-    <template v-if="!asTab" #header>
+    <template #header>
       <div class="w-100 d-flex align-items-center flex-wrap custom-header">
         <slot name="header">
           <Component :is="titleTag" class="custom-header-title">

@@ -21,7 +21,7 @@ export function useAutoModal() {
       ...(markdown
         ? { headerVariant: 'warning' }
         : {
-            hideHeader: true,
+            noHeader: true,
             bodyVariant: 'warning',
             bodyClass: ['fw-bold', 'rounded-top'],
           }),

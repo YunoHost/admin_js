@@ -27,6 +27,8 @@ const props = withDefaults(
     noFooter?: boolean
     hr?: boolean
     sections?: ConfigSection<MV, FFD>[]
+    title?: string
+    icon?: string
   }>(),
   {
     id: 'ynh-form',
@@ -38,6 +40,8 @@ const props = withDefaults(
     noFooter: false,
     hr: false,
     sections: undefined,
+    title: undefined,
+    icon: undefined,
   },
 )
 
@@ -49,6 +53,7 @@ const emit = defineEmits<{
 
 const slots = defineSlots<
   {
+    header?: any
     top?: any
     disclaimer?: any
     'before-form'?: any
@@ -162,14 +167,19 @@ const Fields = createReusableTemplate<{
     </template>
   </Fields.define>
 
-  <YCard class="card-form" v-bind="$attrs">
-    <template #default>
+  <BCard class="card-form" no-body v-bind="$attrs">
+    <slot name="header">
+      <BCardHeader>
+        <h2><YIcon v-if="icon" :iname="icon" class="me-2" />{{ title }}</h2>
+      </BCardHeader>
+    </slot>
+
+    <BCardBody class="p-0">
       <slot name="top" />
 
       <slot name="disclaimer" />
 
       <slot name="before-form" />
-
       <BForm
         :id="id"
         :inline="inline"
@@ -178,26 +188,34 @@ const Fields = createReusableTemplate<{
         @submit.prevent.stop="emit('submit', $event as SubmitEvent)"
       >
         <slot name="default">
-          <template v-if="sections">
+          <BAccordion v-if="sections" flush free>
             <template v-for="section in sections" :key="section.id">
-              <Component
-                :is="section.name ? 'section' : 'div'"
-                v-if="toValue(section.visible)"
-                class="form-section"
+              <BAccordionItem
+                v-if="section.name && section.visible"
+                header-tag="h3"
+                :visible="!section.collapsed"
               >
-                <BCardTitle v-if="section.name" title-tag="h3">
-                  {{ section.name }}
-                  <small v-if="section.help">{{ section.help }}</small>
-                </BCardTitle>
+                <template #title>
+                  <span class="fs-3">{{ section.name }}</span>
+                  <small v-if="section.help" class="ms-1 text-secondary">
+                    {{ section.help }}
+                  </small>
+                </template>
+                <div>
+                  <!-- @vue-ignore-next-line -->
+                  <Fields.reuse :fields-props="section.fields" />
+                </div>
+              </BAccordionItem>
+              <div v-else-if="section.visible" class="form-section p-3">
                 <!-- @vue-ignore-next-line -->
                 <Fields.reuse :fields-props="section.fields" />
-              </Component>
+              </div>
             </template>
-          </template>
-          <template v-else-if="fields">
+          </BAccordion>
+          <div v-else-if="fields" class="form-section p-3">
             <!-- @vue-ignore-next-line -->
             <Fields.reuse :fields-props="fields" />
-          </template>
+          </div>
         </slot>
 
         <slot name="server-error">
@@ -214,23 +232,20 @@ const Fields = createReusableTemplate<{
       </BForm>
 
       <slot name="after-form" />
-    </template>
+    </BCardBody>
 
-    <template v-if="!noFooter" #buttons>
-      <slot name="buttons">
-        <BButton type="submit" variant="success" :form="id">
-          {{ submitText ?? $t('save') }}
-        </BButton>
-      </slot>
-    </template>
-  </YCard>
+    <BCardFooter
+      v-if="!noFooter"
+      class="d-flex align-items-center justify-content-end"
+    >
+      <BButton type="submit" variant="success" :form="id">
+        {{ submitText ?? $t('save') }}
+      </BButton>
+    </BCardFooter>
+  </BCard>
 </template>
 
 <style lang="scss" scoped>
-.card-title {
-  margin-bottom: 1em;
-  border-bottom: solid $border-width $gray-500;
-}
 .form-section:not(:last-child) {
   margin-bottom: 3rem;
 }

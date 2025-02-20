@@ -27,6 +27,7 @@ export type CoreConfigSection = {
   name?: Translation
   options: AnyOption[]
   visible?: JSExpression
+  collapsed?: boolean
 }
 
 // OPTIONS

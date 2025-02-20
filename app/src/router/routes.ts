@@ -204,7 +204,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     name: 'app-info',
-    path: '/apps/:id/:tabId?',
+    path: '/apps/:id/:coreTabId?/:tabId?',
     component: () => import('@/views/app/AppInfo.vue'),
     props: true,
     meta: {

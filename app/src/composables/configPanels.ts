@@ -282,6 +282,7 @@ function formatConfigPanel<NestedMV extends Obj, MV extends Obj<NestedMV>>(
       isActionSection: section.is_action_section,
       name: formatI18nField(section.name),
       visible: useExpression(section.visible, form),
+      collapsed: section.collapsed ?? false
     }
   })
 
@@ -400,13 +401,19 @@ export function useConfigPanels<NestedMV extends Obj, MV extends Obj<NestedMV>>(
   config: ConfigPanels<NestedMV, MV>,
   tabId: MaybeRefOrGetter<keyof MV | undefined>,
   onPanelApply: OnPanelApply<MV>,
+  tabIdKey: string = 'tabId',
 ): ConfigPanelsProps<NestedMV, MV> {
   const router = useRouter()
   watch(
     () => toValue(tabId),
     (id) => {
       if (!id) {
-        router.replace({ params: { tabId: config.panels[0].id } })
+        router.replace({
+          params: {
+            ...router.currentRoute.value.params,
+            [tabIdKey]: config.panels[0].id,
+          },
+        })
       }
     },
     { immediate: true },

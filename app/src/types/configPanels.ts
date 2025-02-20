@@ -57,6 +57,7 @@ export type ConfigSection<MV extends Obj, FFD extends FormFieldDict<MV>> = {
   isActionSection: boolean
   name?: string
   visible: boolean | ComputedRef<boolean>
+  collapsed: boolean
 }
 
 export type ConfigPanel<
