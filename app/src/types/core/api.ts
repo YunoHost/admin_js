@@ -340,3 +340,18 @@ export type Certificate = {
   ACME_eligible: boolean
   has_wildcards: boolean
 }
+
+export type APIDiskResult = {
+  name: string
+  model: string
+  serial: string
+  removable: boolean
+  size: number
+  connection_bus: string
+  type: "HDD" | "SSD",
+  rpm?: number
+}
+
+export type Disk  = APIDiskResult & {
+  size: string
+}
